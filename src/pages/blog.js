@@ -25,8 +25,8 @@ class Blog extends React.Component {
                 >
                   <header>
                     {node.frontmatter.thumbnail != null ? (
-                      <div class="card-image">
-                        <figure class="image">
+                      <div className="card-image">
+                        <figure className="image">
                           <img
                             src={
                               node.frontmatter.thumbnail.childImageSharp.fixed
@@ -40,8 +40,8 @@ class Blog extends React.Component {
                       ""
                     )}
                   </header>
-                  <div class="card-content is-paddingless	">
-                    <section class="content">
+                  <div className="card-content is-paddingless	">
+                    <section className="content">
                       <h3>
                         <Link to={node.fields.slug}>{title}</Link>
                       </h3>
@@ -51,7 +51,7 @@ class Blog extends React.Component {
                         }}
                       />
                       <br />
-                      <time datetime="2016-1-1">{node.frontmatter.date}</time>
+                      <time dateTime="2016-1-1">{node.frontmatter.date}</time>
                     </section>
                   </div>
                 </article>

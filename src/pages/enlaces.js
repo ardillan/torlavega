@@ -7,11 +7,11 @@ const Enlaces = () => {
   return (
     <Layout>
       <SEO title="Enlaces"></SEO>
-      <section class="hero is-primary">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">Enlaces</h1>
-            <h2 class="subtitle">Recopilación de enlaces interesantes</h2>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">Enlaces</h1>
+            <h2 className="subtitle">Recopilación de enlaces interesantes</h2>
           </div>
         </div>
       </section>

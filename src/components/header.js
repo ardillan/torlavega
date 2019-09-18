@@ -2,6 +2,9 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
+import github from "../images/general/github_icon.svg"
+import twitter from "../images/general/twitter_icon.svg"
+
 export default () => {
   const data = useStaticQuery(graphql`
     query getLogoQuery {
@@ -19,8 +22,8 @@ export default () => {
 
   return (
     <header>
-      <nav class="navbar is-transparent">
-        <div class="navbar-brand">
+      <nav className="navbar is-transparent">
+        <div className="navbar-brand">
           <Link to="">
             <Image
               fixed={data.avatar.childImageSharp.fixed}
@@ -31,7 +34,7 @@ export default () => {
             />
           </Link>
           <div
-            class="navbar-burger burger"
+            className="navbar-burger burger"
             data-target="navbarExampleTransparentExample"
           >
             <span></span>
@@ -40,49 +43,67 @@ export default () => {
           </div>
         </div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
+        <div id="navbarExampleTransparentExample" className="navbar-menu">
+          <div className="navbar-start">
             <Link to="/blog" className="navbar-item">
-              ✏️ Blog
+              <span role="img" aria-label="Icono de un lápiz">
+                ✏️
+              </span>{" "}
+              Blog
             </Link>
             <Link to="/proyecto" className="navbar-item">
-              ⚪️ El Proyecto
+              <span role="img" aria-label="Icono de un círculo">
+                ⚪️
+              </span>{" "}
+              El Proyecto
             </Link>
             <Link to="/enlaces" className="navbar-item">
-              📌 Enlaces
+              <span role="img" aria-label="Icono de una chincheta">
+                📌
+              </span>{" "}
+              Enlaces
             </Link>
             <Link to="/contacto" className="navbar-item">
-              ✉️ Contacto
+              <span role="img" aria-label="Icono de un sobre">
+                {" "}
+                ✉️
+              </span>{" "}
+              Contacto
             </Link>
           </div>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="field is-grouped">
+                <p className="control">
                   <a
-                    class="bd-tw-button button"
+                    className="button is-primary is-outlined"
                     data-social-network="Twitter"
-                    data-social-action="tweet"
+                    data-social-action="Twitter"
                     data-social-target="http://localhost:4000"
                     target="_blank"
-                    href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms"
+                    href="https://twitter.com/datos.torlavega"
+                    rel="noopener noreferrer"
                   >
-                    <span class="icon">
-                      <i class="fab fa-twitter"></i>
+                    <span className="icon">
+                      <i>
+                        <img src={twitter} />
+                      </i>
                     </span>
-                    <span>Tweet</span>
+                    <span>Twitter</span>
                   </a>
                 </p>
-                <p class="control">
+                <p className="control">
                   <a
-                    class="button is-primary"
-                    href="https://github.com/jgthms/bulma/releases/download/0.7.5/bulma-0.7.5.zip"
+                    className="button is-primary is-outlined"
+                    href="https://github.com/ardillan/torlavega"
                   >
-                    <span class="icon">
-                      <i class="fas fa-download"></i>
+                    <span className="icon">
+                      <i>
+                        <img src={github} />
+                      </i>
                     </span>
-                    <span>Download</span>
+                    <span>Colabora</span>
                   </a>
                 </p>
               </div>

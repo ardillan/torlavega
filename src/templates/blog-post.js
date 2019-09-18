@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -17,28 +18,38 @@ class BlogPostTemplate extends React.Component {
       day: "numeric",
     })
 
+    console.log(this.props)
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <section class="section">
-          <div class="container">
-            <header>
-              {post.frontmatter.thumbnail != null ? (
-                <img
-                  src={post.frontmatter.thumbnail.publicURL}
-                  alt="Imagen de cabecera"
-                />
-              ) : (
-                ""
-              )}
-              <p>{postDate.toString()}</p>
-            </header>
-            <h1 className="title is-2">{post.frontmatter.title}</h1>
-            <h3 className="subtitle is-5">{post.frontmatter.description}</h3>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-6">
+                <header>
+                  {post.frontmatter.thumbnail != null ? (
+                    <Image
+                      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                      alt="Imagen de cabecera"
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <p>{postDate.toString()}</p>
+                </header>
+                <main>
+                  <h1 className="title is-2">{post.frontmatter.title}</h1>
+                  <h3 className="subtitle is-5">
+                    {post.frontmatter.description}
+                  </h3>
+                  <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                </main>
+              </div>
+            </div>
           </div>
           <article>
             <hr />
@@ -89,6 +100,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

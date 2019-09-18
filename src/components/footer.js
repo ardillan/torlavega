@@ -1,8 +1,8 @@
 import React from "react"
 
 export default () => (
-  <footer class="footer">
-    <div class="content has-text-centered is-dark">
+  <footer className="footer">
+    <div className="content has-text-centered is-dark">
       <strong>{new Date().getFullYear()}</strong>, Hecho con{" "}
       <a href="https://www.gatsbyjs.org/">GatsbyJS</a>
       <p>
