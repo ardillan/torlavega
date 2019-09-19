@@ -74,7 +74,7 @@ const getData = async () => {
           .attr("href")
 
         data.push({
-          title,
+          title: title.replace(/\s+/g, " "),
           link,
           date: new Date(replaceMonth(date.replace("00:00", "23:00"))),
         })
