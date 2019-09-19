@@ -46,28 +46,15 @@ export default () => {
         <div id="navbarExampleTransparentExample" className="navbar-menu">
           <div className="navbar-start">
             <Link to="/blog" className="navbar-item">
-              <span role="img" aria-label="Icono de un lápiz">
-                ✏️
-              </span>{" "}
               Blog
             </Link>
             <Link to="/proyecto" className="navbar-item">
-              <span role="img" aria-label="Icono de un círculo">
-                ⚪️
-              </span>{" "}
               El Proyecto
             </Link>
             <Link to="/enlaces" className="navbar-item">
-              <span role="img" aria-label="Icono de una chincheta">
-                📌
-              </span>{" "}
               Enlaces
             </Link>
             <Link to="/contacto" className="navbar-item">
-              <span role="img" aria-label="Icono de un sobre">
-                {" "}
-                ✉️
-              </span>{" "}
               Contacto
             </Link>
           </div>

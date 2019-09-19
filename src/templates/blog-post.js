@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-6">
+              <div className="column is-8 is-offset-2">
                 <header>
                   {post.frontmatter.thumbnail != null ? (
                     <Image
@@ -51,32 +51,38 @@ class BlogPostTemplate extends React.Component {
               </div>
             </div>
           </div>
-          <article>
-            <hr />
-            <footer>
-              <Bio />
-            </footer>
-          </article>
+          <div className="container">
+            <article className="columns">
+              <hr />
+              <footer className="column is-8 is-offset-2">
+                <Bio />
+              </footer>
+            </article>
+          </div>
         </section>
 
-        <nav>
-          <ul>
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+        <div className="columns">
+          <div className="column is-8 is-offset-2">
+            <nav>
+              <ul>
+                <li>
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </Layout>
     )
   }

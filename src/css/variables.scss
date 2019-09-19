@@ -1,7 +1,21 @@
-// $desktop: 560px + (2 * $gap);
-
 // Fonts
 $size-1: 19px;
 $is-size-6: 4rem;
 
+// Main colors
+$primary-color: #870ff6;
+$primary-color-dark: #6620a7;
+$primary-color-light: #d3bbe9;
+$primary-color-lighter: #f8f0ff;
+
+$secondary-color: #08d43d;
+$secondary-color-dark: #086521;
+$secondary-color-light: #66e989;
+$secondary-color-lighter: #9afab4;
+
+// Text colors
+$text-color-dark: #25142f;
+$text-color-grey: #676180;
+
 // Breakpoint
+$fullhd: 300px + (2 * $gap);
