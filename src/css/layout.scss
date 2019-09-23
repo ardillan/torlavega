@@ -1,0 +1,14 @@
+nav {
+  height: 100px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.container {
+  max-width: 720px;
+}

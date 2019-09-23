@@ -7,3 +7,11 @@
   width: 15px;
   padding: 0px 0 0 0;
 }
+
+section {
+  &.main-banner {
+    background: #52316b;
+    color: white;
+    margin-bottom: 50px;
+  }
+}

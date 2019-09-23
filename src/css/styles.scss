@@ -1,5 +1,12 @@
 @charset "utf-8";
-// If need, change your variables before importing Bulma
-@import "~bulma/bulma.sass";
-@import "../css/variables.scss";
+
+// Bulma CSS Framework
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/elements/container.sass";
+
+// Custom CSS
+@import "../css/fonts.scss";
+@import "../css/layout.scss";
+@import "../css/card.scss";
 @import "../css/general.scss";

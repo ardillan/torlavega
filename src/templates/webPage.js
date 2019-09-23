@@ -1,4 +1,5 @@
 import React from "react"
+import moment from "moment"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -7,34 +8,32 @@ import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { webData } }) => {
   const data = webData.webInfo
+  moment.locale("es-ES")
   return (
     <Layout>
-      <section className="hero is-light">
-        <div className="hero-body">
-          <div className="container">
-            <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <h1 className="title">Torlavega</h1>
-                <h2 className="subtitle">
-                  Proyecto web colaborativo que trata de recopilar el máximo
-                  número de datos disponibles para los ciudadanos de Torlavega
-                </h2>
-                <span className="tag is-primary">Light</span>
-              </div>
+      <section>
+        <div className="container">
+          <div className="columns">
+            <div className="column is-8 is-offset-2">
+              <h1 className="title">Torlavega</h1>
+              <h2 className="subtitle">
+                Proyecto web colaborativo que trata de recopilar el máximo
+                número de datos disponibles para los ciudadanos de Torlavega
+              </h2>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="hero">
-        <div className="hero-body">
-          <div className="container">
-            <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <ul>
-                  {data.map((value, index) => (
+      <section>
+        <div className="container">
+          <div className="columns">
+            <div className="column is-8 is-offset-2">
+              <ul>
+                {data.map((value, index) => {
+                  let fecha = moment(value.date, "YYYYMMDD").calendar()
+                  return (
                     <li key={index}>
-                      {" "}
                       <a
                         href={`http://www.torrelavega.es${value.link}`}
                         target="_blank"
@@ -48,9 +47,9 @@ export default ({ pageContext: { webData } }) => {
                         {formatDate(value.date)}
                       </time>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         </div>
