@@ -11,8 +11,8 @@ class Layout extends React.Component {
         <main className="container">
           <Header />
           {children}
+          <Footer />
         </main>
-        <Footer />
       </>
     )
   }

@@ -44,7 +44,7 @@ export default ({ pageContext: { webData } }) => {
                       </a>
                       <br />
                       <time dateTime={value.date}>
-                        {formatDate(value.date)}
+                        {formatDate(value.date, "Readable")}
                       </time>
                     </li>
                   )
