@@ -16,10 +16,14 @@
     font-weight: 500;
   }
 
+  header {
+    height: 90px;
+  }
+
   footer {
     text-align: initial;
     display: flex;
-
+    margin: 0px;
     align-items: center;
     height: 20px;
     .meta,
@@ -40,11 +44,20 @@
     background: #dfddff;
     width: 100%;
     top: 7px;
+    left: -10px;
     position: absolute;
     height: 100%;
     border: 2px solid black;
     border-radius: 3px;
     z-index: -99;
-    left: -10px;
+    transition: all 0.05s;
+  }
+
+  :hover {
+    .shadow {
+      left: -6px;
+      top: 2px;
+      background: #9692c5;
+    }
   }
 }
