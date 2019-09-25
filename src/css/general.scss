@@ -11,8 +11,22 @@
 section {
   &.main-banner {
     background: #52316b;
-    color: white;
     margin: 0 0 50px 0;
     height: 250px;
+    border-radius: 3px;
+    align-items: center;
+
+    h1,
+    p {
+      color: white;
+    }
+
+    h2 {
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 17px;
+      color: white;
+      text-transform: none;
+    }
   }
 }

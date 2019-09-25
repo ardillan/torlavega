@@ -3,6 +3,8 @@ title: "Scrapper sobre Torrelavega.es"
 date: "2019-09-24T20:00:00.0100"
 description: "Para que este proyecto adopte un buen camino será necesario recoger la máxima cantidad ideas posible. Para ello puedes enviar un correo electrónico o bien contactar vía Twitter."
 thumbnail: "./thumbnail.jpg"
+category:
+  - Transparencia
 ---
 
 ## Necesitamos ideas

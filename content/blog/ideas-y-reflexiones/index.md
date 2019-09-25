@@ -4,6 +4,8 @@ date: "2018-07-28T20:00:00.0100"
 subtitle: "Para que este proyecto adopte un buen camino será necesario recoger la máxima cantidad ideas posible. Para ello puedes enviar un correo electrónico o bien contactar vía Twitter."
 description: "Cómo hacer ciudad una ciudad"
 thumbnail: "./thumbnail.jpg"
+category:
+  - General
 ---
 
 ## Necesitamos ideas

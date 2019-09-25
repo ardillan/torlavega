@@ -5,7 +5,8 @@ export default () => (
     <div className="columns">
       <div className="column is-12">
         <strong>{new Date().getFullYear()}</strong>, Hecho con{" "}
-        <a href="https://www.gatsbyjs.org/">GatsbyJS</a>
+        <a href="https://www.gatsbyjs.org/">GatsbyJS</a> desde diferentes sitios
+        de Torlavega
         <p>
           Para la gente de internet{`  `}
           <span
@@ -16,7 +17,7 @@ export default () => (
               textShadow: "0 0 5px #fff, 0 0 10px #f83e4b",
             }}
           >
-            ♥
+            ♥️
           </span>
           ️
         </p>

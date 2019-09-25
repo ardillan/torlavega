@@ -9,6 +9,7 @@ export const getPosts = () => {
         ) {
           edges {
             node {
+              id
               fields {
                 slug
               }

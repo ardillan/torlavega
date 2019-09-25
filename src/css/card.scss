@@ -4,6 +4,37 @@
   padding: 15px;
   position: relative;
   background: white;
+  min-height: 100px;
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 23px;
+    line-height: 21px;
+    font-weight: 500;
+  }
+
+  footer {
+    text-align: initial;
+    display: flex;
+
+    align-items: center;
+    height: 20px;
+    .meta,
+    time {
+      font-family: "Akrobat";
+      font-size: 15px;
+      text-transform: uppercase;
+      color: $secondary-color;
+      width: 50%;
+    }
+
+    time {
+      text-align: right;
+    }
+  }
 
   .shadow {
     background: #dfddff;
@@ -15,14 +46,5 @@
     border-radius: 3px;
     z-index: -99;
     left: -10px;
-  }
-  h1 {
-    font-size: 23px;
-    line-height: 21px;
-    font-weight: 700;
-  }
-
-  a {
-    text-decoration: none;
   }
 }

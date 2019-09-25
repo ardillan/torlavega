@@ -1,19 +1,29 @@
 export const formatDate = (dateTime, type) => {
+  let date
   switch (type) {
     case "Readable":
-      return new Date(dateTime).toLocaleDateString("es-ES", {
+      date = new Date(dateTime).toLocaleDateString("es-ES", {
         year: "numeric",
         month: "long",
         day: "numeric",
       })
       break
     case "DD/MM/YYYY":
-      return new Date(dateTime).toLocaleDateString("es-ES", {
+      date = new Date(dateTime).toLocaleDateString("es-ES", {
         year: "numeric",
-        month: "long",
+        month: "numeric",
+        day: "numeric",
+      })
+      break
+    default:
+      date = new Date(dateTime).toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "numeric",
         day: "numeric",
       })
   }
+
+  return date
 }
 
 export const formatURL = slug => {

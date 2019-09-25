@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-8 is-offset-2">
+              <div className="column is-12">
                 <header>
                   {post.frontmatter.thumbnail != null ? (
                     <Image

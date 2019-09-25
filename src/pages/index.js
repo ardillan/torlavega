@@ -17,33 +17,37 @@ export default props => {
       <SEO title="Inicio" />
 
       <section className="columns main-banner">
-        <div className="column is-12">
-          <h1>Torlavega</h1>
-          <h2>Proyecto colaborativo</h2>
-          <p>
-            Esta web tratará de recopilar el máximo número de datos disponibles
-            para los ciudadanos de Torlavega.
-          </p>
-        </div>
+        <Link to={"proyecto"}>
+          <div className="column is-10 is-offset-1">
+            <h1>Torlavega.com</h1>
+            <h2>
+              Proyecto colaborativo independiente para la ciudad de Torlavega
+            </h2>
+            <p>
+              Esta web tratará de recopilar el máximo número de datos
+              disponibles para los ciudadanos de Torlavega.
+            </p>
+          </div>
+        </Link>
       </section>
 
       <section>
         <div className="columns">
           {posts.map(post => (
-            <article className="column">
+            <article className="column" key={post.node.id}>
               <div className="card-basic">
-                <header>
-                  <Link to={post.node.fields.slug}>
+                <Link to={post.node.fields.slug}>
+                  <header>
                     <h1>{post.node.frontmatter.title}</h1>
-                  </Link>
-                </header>
-                <div className="shadow"></div>
-                <footer>
-                  <time dateTime="">
-                    {formatDate(post.node.frontmatter.date, "DD/MM/YYYY")}
-                  </time>
-                  <p>{post.node.frontmatter.category}</p>
-                </footer>
+                  </header>
+                  <div className="shadow"></div>
+                  <footer>
+                    <p className="meta">{post.node.frontmatter.category}</p>
+                    <time dateTime="DD/MM/YYYY">
+                      {formatDate(post.node.frontmatter.date, "DD/MM/YYYY")}
+                    </time>
+                  </footer>
+                </Link>
               </div>
             </article>
           ))}

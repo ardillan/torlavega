@@ -31,7 +31,6 @@ export default ({ pageContext: { webData } }) => {
             <div className="column is-8 is-offset-2">
               <ul>
                 {data.map((value, index) => {
-                  let fecha = moment(value.date, "YYYYMMDD").calendar()
                   return (
                     <li key={index}>
                       <a

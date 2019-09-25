@@ -2,6 +2,12 @@
   max-width: 720px;
 }
 
+body {
+  @media (max-width: $breakpoint-tablet) {
+    padding: 15px;
+  }
+}
+
 header {
   nav {
     height: 100px;
