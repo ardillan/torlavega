@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { formatDate } from "../utils/helpers"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,50 +17,31 @@ class Blog extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns is-multiline">
-              {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug
-
-                return (
-                  <article
-                    key={node.fields.slug}
-                    className="column  is-4 is-offset-1"
-                  >
-                    <header>
-                      {node.frontmatter.thumbnail != null ? (
-                        <div className="card-image">
-                          <figure className="image">
-                            <img
-                              src={
-                                node.frontmatter.thumbnail.childImageSharp.fixed
-                                  .src
-                              }
-                              alt={`Imagen para la entrada de ${title}`}
-                            />
-                          </figure>
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                    </header>
-
-                    <div className="card-content is-paddingless	">
-                      <section className="content">
-                        <h3>
-                          <Link to={node.fields.slug}>{title}</Link>
-                        </h3>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              node.frontmatter.description || node.excerpt,
-                          }}
-                        />
-                        <br />
-                        <time dateTime="2016-1-1">{node.frontmatter.date}</time>
-                      </section>
-                    </div>
-                  </article>
-                )
-              })}
+              {posts.map(post => (
+                <article className="column" key={post.node.id}>
+                  <div className="card-basic">
+                    <Link to={post.node.fields.slug}>
+                      <header>
+                        <h1>{post.node.frontmatter.title}</h1>
+                      </header>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            post.node.frontmatter.description ||
+                            post.node.excerpt,
+                        }}
+                      />
+                      <footer>
+                        <p className="meta">{post.node.frontmatter.category}</p>
+                        <time dateTime="DD/MM/YYYY">
+                          {formatDate(post.node.frontmatter.date, "DD/MM/YYYY")}
+                        </time>
+                        <div className="shadow"></div>
+                      </footer>
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -80,6 +62,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          id
           excerpt
           fields {
             slug

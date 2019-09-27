@@ -26,63 +26,66 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <section className="section">
-          <div className="container">
-            <div className="columns">
-              <div className="column is-12">
-                <header>
-                  {post.frontmatter.thumbnail != null ? (
-                    <Image
-                      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                      alt="Imagen de cabecera"
-                    />
-                  ) : (
-                    ""
-                  )}
-                  <p>{postDate.toString()}</p>
-                </header>
-                <main>
-                  <h1 className="title is-2">{post.frontmatter.title}</h1>
-                  <h3 className="subtitle is-5">
-                    {post.frontmatter.description}
-                  </h3>
-                  <section dangerouslySetInnerHTML={{ __html: post.html }} />
-                </main>
+
+        <main className="blog-post">
+          <section className="section">
+            <div className="container">
+              <div className="columns">
+                <div className="column is-12">
+                  <header>
+                    {post.frontmatter.thumbnail != null ? (
+                      <Image
+                        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                        alt="Imagen de cabecera"
+                      />
+                    ) : (
+                      ""
+                    )}
+                    <p>{postDate.toString()}</p>
+                  </header>
+                  <main>
+                    <h1 className="title is-2">{post.frontmatter.title}</h1>
+                    <h3 className="subtitle is-5">
+                      {post.frontmatter.description}
+                    </h3>
+                    <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                  </main>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="container">
-            <article className="columns">
-              <hr />
-              <footer className="column is-8 is-offset-2">
-                <Bio />
-              </footer>
-            </article>
-          </div>
-        </section>
+            <div className="container">
+              <article className="columns">
+                <hr />
+                <footer className="column is-8 is-offset-2">
+                  <Bio />
+                </footer>
+              </article>
+            </div>
+          </section>
 
-        <div className="columns">
-          <div className="column is-8 is-offset-2">
-            <nav>
-              <ul>
-                <li>
-                  {previous && (
-                    <Link to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  {next && (
-                    <Link to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
-            </nav>
+          <div className="columns">
+            <div className="column is-8 is-offset-2">
+              <nav>
+                <ul>
+                  <li>
+                    {previous && (
+                      <Link to={previous.fields.slug} rel="prev">
+                        ← {previous.frontmatter.title}
+                      </Link>
+                    )}
+                  </li>
+                  <li>
+                    {next && (
+                      <Link to={next.fields.slug} rel="next">
+                        {next.frontmatter.title} →
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
+        </main>
       </Layout>
     )
   }

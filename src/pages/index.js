@@ -16,19 +16,41 @@ export default props => {
     <Layout location={props.location} title="Inicio">
       <SEO title="Inicio" />
 
-      <section className="columns main-banner">
-        <Link to={"proyecto"}>
-          <div className="column is-10 is-offset-1">
-            <h1>Torlavega.com</h1>
-            <h2>
-              Proyecto colaborativo independiente para la ciudad de Torlavega
-            </h2>
-            <p>
-              Esta web tratará de recopilar el máximo número de datos
-              disponibles para los ciudadanos de Torlavega.
-            </p>
+      <section className="main-banner">
+        <div className="columns">
+          <Link to={"proyecto"}>
+            <div className="column is-10 is-offset-1">
+              <h1>Test site</h1>
+              <h2>
+                Proyecto colaborativo independiente para la ciudad de Torlavega
+              </h2>
+              <p>
+                Esta web tratará de recopilar el máximo número de datos
+                disponibles para los ciudadanos de Torlavega.
+              </p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <section className="container">
+        <div className="columns">
+          <div className="column is-flex">
+            <Link to="" className="button">
+              Quiero colaborar
+            </Link>
           </div>
-        </Link>
+          <div className="column is-flex">
+            <Link to="" className="button">
+              Quiero colaborar
+            </Link>
+          </div>
+          <div className="column is-flex">
+            <Link to="" className="button">
+              Quiero colaborar
+            </Link>
+          </div>
+        </div>
       </section>
 
       <section>

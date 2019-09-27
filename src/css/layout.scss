@@ -24,7 +24,19 @@ header {
   }
 }
 
+section {
+  margin: 50px 0;
+}
+
 footer {
   margin: 50px 0 0 0;
   text-align: center;
+}
+
+// Blog Layout
+.blog-post {
+  a {
+    color: $text-color-dark;
+    background: $text-color-link;
+  }
 }
