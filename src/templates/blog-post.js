@@ -29,52 +29,49 @@ class BlogPostTemplate extends React.Component {
 
         <main className="blog-post">
           <section className="section">
-            <div className="container">
-              <div className="columns">
-                <div className="column is-12">
-                  <header>
-                    {post.frontmatter.thumbnail != null ? (
-                      <Image
-                        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                        alt="Imagen de cabecera"
-                      />
-                    ) : (
-                      ""
-                    )}
-                    <p>{postDate.toString()}</p>
-                  </header>
-                  <main>
-                    <h1 className="title is-2">{post.frontmatter.title}</h1>
-                    <h3 className="subtitle is-5">
-                      {post.frontmatter.description}
-                    </h3>
-                    <section dangerouslySetInnerHTML={{ __html: post.html }} />
-                  </main>
-                </div>
+            <div className="columns">
+              <div className="column is-12">
+                <header>
+                  {post.frontmatter.thumbnail != null ? (
+                    <Image
+                      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                      alt="Imagen de cabecera"
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <time datetime={post.frontmatter.date}>
+                    {postDate.toString()}
+                  </time>
+                </header>
+                <main>
+                  <h1 className="title is-2">{post.frontmatter.title}</h1>
+                  <h3 className="subtitle is-6">
+                    {post.frontmatter.description}
+                  </h3>
+                  <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                </main>
               </div>
             </div>
-            <div className="container">
-              <article className="columns">
-                <hr />
-                <footer className="column is-8 is-offset-2">
-                  <Bio />
-                </footer>
-              </article>
-            </div>
+            <article className="columns">
+              <footer className="column is-12">
+                <Bio />
+              </footer>
+            </article>
           </section>
 
-          <div className="columns">
-            <div className="column is-8 is-offset-2">
+          <div className="columns blog-navigation">
+            <div className="column is-12">
               <nav>
-                <ul>
-                  <li>
+                <ul className="columns">
+                  <li className="column is-6">
                     {previous && (
                       <Link to={previous.fields.slug} rel="prev">
                         ← {previous.frontmatter.title}
                       </Link>
                     )}
                   </li>
-                  <li>
+                  <li className="column is-6">
                     {next && (
                       <Link to={next.fields.slug} rel="next">
                         {next.frontmatter.title} →

@@ -25,10 +25,10 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
 
   return (
-    <div>
+    <div className="bio">
       <p>
-        <strong>{author}</strong> es un proyecto colaborativo que trata de sevir
-        información a los ciudadanos de Torlavega.
+        <strong>{author}</strong> es un proyecto colaborativo que trata de
+        servir información a los ciudadanos de Torlavega.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           Le puedes seguir en Twitter

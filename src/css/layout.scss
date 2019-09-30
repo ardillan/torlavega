@@ -19,13 +19,9 @@ header {
       padding-right: 10px;
       text-transform: uppercase;
       font-size: 14px;
-      color: $primary-color;
+      color: $text-color-dark;
     }
   }
-}
-
-section {
-  margin: 50px 0;
 }
 
 footer {
@@ -35,8 +31,40 @@ footer {
 
 // Blog Layout
 .blog-post {
+  h1 {
+    font-family: $headers-font;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-family: $main-font;
+    text-transform: none;
+    font-weight: 500;
+  }
   a {
     color: $text-color-dark;
     background: $text-color-link;
   }
+
+  .blog-navigation {
+    a {
+      background: none;
+    }
+
+    li {
+      border: 2px solid $primary-color-dark;
+      border-radius: 3px;
+      padding: 0px;
+      background: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.bio {
+  background: $primary-color-lighter;
+  border-radius: 5px;
+  padding: 10px;
 }

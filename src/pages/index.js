@@ -32,8 +32,8 @@ export default props => {
           </Link>
         </div>
       </section>
-
-      <section className="container">
+      <hr className="separator" />
+      <section>
         <div className="columns">
           <div className="column is-flex">
             <Link to="" className="button">
@@ -52,6 +52,7 @@ export default props => {
           </div>
         </div>
       </section>
+      <hr className="separator" />
 
       <section>
         <div className="columns">

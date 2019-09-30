@@ -9,10 +9,8 @@ const Enlaces = () => {
       <SEO title="Enlaces"></SEO>
       <section className="hero is-primary">
         <div className="hero-body">
-          <div className="container">
-            <h1 className="title">Enlaces</h1>
-            <h2 className="subtitle">Recopilación de enlaces interesantes</h2>
-          </div>
+          <h1 className="title">Enlaces</h1>
+          <h2 className="subtitle">Recopilación de enlaces interesantes</h2>
         </div>
       </section>
     </Layout>
