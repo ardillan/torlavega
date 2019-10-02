@@ -6,6 +6,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import thumbnail from "../images/general/placeholder_post.png"
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -30,33 +32,29 @@ class BlogPostTemplate extends React.Component {
         <main className="blog-post">
           <section className="section">
             <article>
-              <div className="columns">
-                <div className="column is-12">
-                  <header className="card-basic">
-                    {post.frontmatter.thumbnail != null ? (
-                      <Image
-                        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                        alt="Imagen de cabecera"
-                      />
-                    ) : (
-                      ""
-                    )}
-                    <div className="meta">
-                      <h1 className="title">{post.frontmatter.title}</h1>
-                      <h3 className="description">
-                        {post.frontmatter.description}
-                      </h3>
-                      <time dateTime={post.frontmatter.date}>
-                        {postDate.toString()}
-                      </time>
-                    </div>
-                    <div className="shadow"></div>
-                  </header>
-                  <hr className="separator" />
-
-                  <section dangerouslySetInnerHTML={{ __html: post.html }} />
+              <header className="card-basic is-flex">
+                <h1 className="title">{post.frontmatter.title}</h1>
+                <div className="thumbnail">
+                  {post.frontmatter.thumbnail != null ? (
+                    <Image
+                      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                      alt="Imagen de cabecera"
+                    />
+                  ) : (
+                    <img src={thumbnail} alt="Imagen en miniatura" />
+                  )}
                 </div>
-              </div>
+                <h3 className="description">{post.frontmatter.description}</h3>
+                <div className="meta">
+                  <time dateTime={post.frontmatter.date}>
+                    {postDate.toString()}
+                  </time>
+                </div>
+                <div className="shadow"></div>
+              </header>
+              <hr className="separator" />
+
+              <section dangerouslySetInnerHTML={{ __html: post.html }} />
             </article>
             <section className="columns">
               <footer className="column is-12">
