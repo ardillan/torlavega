@@ -29,58 +29,61 @@ class BlogPostTemplate extends React.Component {
 
         <main className="blog-post">
           <section className="section">
-            <div className="columns">
-              <div className="column is-12">
-                <header>
-                  {post.frontmatter.thumbnail != null ? (
-                    <Image
-                      fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                      alt="Imagen de cabecera"
-                    />
-                  ) : (
-                    ""
-                  )}
-                  <time datetime={post.frontmatter.date}>
-                    {postDate.toString()}
-                  </time>
-                </header>
-                <main>
-                  <h1 className="title is-2">{post.frontmatter.title}</h1>
-                  <h3 className="subtitle is-6">
-                    {post.frontmatter.description}
-                  </h3>
+            <article>
+              <div className="columns">
+                <div className="column is-12">
+                  <header className="card-basic">
+                    {post.frontmatter.thumbnail != null ? (
+                      <Image
+                        fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                        alt="Imagen de cabecera"
+                      />
+                    ) : (
+                      ""
+                    )}
+                    <div className="meta">
+                      <h1 className="title">{post.frontmatter.title}</h1>
+                      <h3 className="description">
+                        {post.frontmatter.description}
+                      </h3>
+                      <time dateTime={post.frontmatter.date}>
+                        {postDate.toString()}
+                      </time>
+                    </div>
+                    <div className="shadow"></div>
+                  </header>
+                  <hr className="separator" />
+
                   <section dangerouslySetInnerHTML={{ __html: post.html }} />
-                </main>
+                </div>
               </div>
-            </div>
-            <article className="columns">
+            </article>
+            <section className="columns">
               <footer className="column is-12">
                 <Bio />
               </footer>
-            </article>
+            </section>
           </section>
 
-          <div className="columns blog-navigation">
-            <div className="column is-12">
-              <nav>
-                <ul className="columns">
-                  <li className="column is-6">
-                    {previous && (
-                      <Link to={previous.fields.slug} rel="prev">
-                        ← {previous.frontmatter.title}
-                      </Link>
-                    )}
-                  </li>
-                  <li className="column is-6">
-                    {next && (
-                      <Link to={next.fields.slug} rel="next">
-                        {next.frontmatter.title} →
-                      </Link>
-                    )}
-                  </li>
-                </ul>
-              </nav>
-            </div>
+          <div className="blog-navigation">
+            <nav>
+              <ul className="columns">
+                <li className="column is-6">
+                  {previous && (
+                    <Link to={previous.fields.slug} rel="prev">
+                      ← {previous.frontmatter.title}
+                    </Link>
+                  )}
+                </li>
+                <li className="column is-6">
+                  {next && (
+                    <Link to={next.fields.slug} rel="next">
+                      {next.frontmatter.title} →
+                    </Link>
+                  )}
+                </li>
+              </ul>
+            </nav>
           </div>
         </main>
       </Layout>

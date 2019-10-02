@@ -31,18 +31,37 @@ footer {
 
 // Blog Layout
 .blog-post {
-  h1 {
-    font-family: $headers-font;
-    text-transform: uppercase;
-  }
-  .subtitle {
-    font-family: $main-font;
-    text-transform: none;
-    font-weight: 500;
+  .card-basic {
+    padding: 30px;
+    h1 {
+      font-family: $secondary-font !important;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 46px;
+      width: 50%;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-family: $main-font;
+      text-transform: none;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .meta {
+      font-family: $secondary-font;
+      text-transform: uppercase;
+    }
   }
   a {
     color: $text-color-dark;
     background: $text-color-link;
+    &:hover {
+      outline: dashed $primary-color-light;
+      outline-width: 1px;
+      outline-offset: 2px;
+    }
   }
 
   .blog-navigation {

@@ -9,17 +9,12 @@
 @font-face {
   font-family: "Akrobat";
   font-weight: "500";
-  src: url("../../static/fonts/akrobat/Akrobat-SemiBold.otf");
-}
-
-body {
-  font-family: $main-font;
+  src: url("../../static/fonts/akrobat/Akrobat-Bold.otf");
 }
 
 p {
   font-size: 17px;
   line-height: 28px;
-  color: $text-color-dark;
 }
 
 h1,
