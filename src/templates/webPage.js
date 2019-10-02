@@ -1,14 +1,10 @@
 import React from "react"
-import moment from "moment"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
 import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { webData } }) => {
   const data = webData.webInfo
-  moment.locale("es-ES")
   return (
     <Layout>
       <section>

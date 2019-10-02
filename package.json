@@ -27,7 +27,6 @@
     "gatsby-source-filesystem": "^2.1.11",
     "gatsby-transformer-remark": "^2.6.26",
     "gatsby-transformer-sharp": "^2.2.7",
-    "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "prismjs": "^1.17.1",
     "puppeteer": "^1.19.0",
