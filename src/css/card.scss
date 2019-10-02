@@ -11,9 +11,11 @@
   }
 
   h1 {
+    font-family: $secondary-font;
     font-size: 23px;
-    line-height: 21px;
     font-weight: 500;
+    text-transform: uppercase;
+    line-height: 21px;
   }
 
   header {
