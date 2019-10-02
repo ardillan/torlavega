@@ -18,7 +18,7 @@ export default props => {
 
       <section className="main-banner">
         <div className="columns">
-          <Link to={"proyecto"}>
+          <Link to="/proyecto">
             <div className="column is-10 is-offset-1">
               <h1>Test site</h1>
               <h2>
@@ -36,14 +36,14 @@ export default props => {
       <section>
         <div className="columns">
           <div className="column is-flex">
-            <Link to="" className="button">
-              Quiero colaborar
+            <Link to="/proyecto" className="button">
+              El proyecto
             </Link>
           </div>
           <div className="column is-flex">
-            <Link to="" className="button">
-              Quiero colaborar
-            </Link>
+            <a href="https://github.com/ardillan/torlavega" className="button">
+              Motivación
+            </a>
           </div>
           <div className="column is-flex">
             <Link to="" className="button">
