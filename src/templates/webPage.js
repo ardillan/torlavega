@@ -14,7 +14,7 @@ export default ({ pageContext: { webData } }) => {
       <section>
         <div className="container">
           <div className="columns">
-            <div className="column is-8 is-offset-2">
+            <div className="column is-12">
               <h1 className="title">Torlavega</h1>
               <h2 className="subtitle">
                 Proyecto web colaborativo que trata de recopilar el máximo
@@ -28,7 +28,7 @@ export default ({ pageContext: { webData } }) => {
       <section>
         <div className="container">
           <div className="columns">
-            <div className="column is-8 is-offset-2">
+            <div className="column is-12">
               <ul>
                 {data.map((value, index) => {
                   return (
