@@ -98,6 +98,16 @@ footer {
   }
 }
 
+// Scraper Layout
+.scraper-page {
+  li {
+    margin-bottom: 10px;
+    background: $yellow-light;
+    padding: 15px;
+    border-radius: 3px;
+  }
+}
+
 .bio {
   background: #ffffde;
   border-radius: 5px;

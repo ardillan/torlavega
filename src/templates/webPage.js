@@ -7,8 +7,8 @@ export default ({ pageContext: { webData } }) => {
   const data = webData.webInfo
   return (
     <Layout>
-      <section>
-        <div className="container">
+      <div className="scraper-page">
+        <section>
           <div className="columns">
             <div className="column is-12">
               <h1 className="title">Torlavega</h1>
@@ -18,11 +18,9 @@ export default ({ pageContext: { webData } }) => {
               </h2>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="container">
+        <section>
           <div className="columns">
             <div className="column is-12">
               <ul>
@@ -47,8 +45,8 @@ export default ({ pageContext: { webData } }) => {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   )
 }
