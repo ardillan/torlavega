@@ -26,6 +26,48 @@ export const formatDate = (dateTime, type) => {
   return date
 }
 
+export const replaceMonth = date => {
+  let months_spanish = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ]
+
+  let months_english = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+
+  const transformed_date = months_spanish.map((value, index) => {
+    if (date.includes(value)) {
+      return date.replace(value, months_english[index])
+    }
+
+    return undefined
+  })
+
+  return transformed_date.filter(value => value !== undefined)[0]
+}
+
 export const formatURL = slug => {
   return slug
     .trimLeft()
