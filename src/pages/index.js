@@ -56,7 +56,7 @@ export default props => {
 
       <section>
         <div className="columns">
-          {posts.map(post => (
+          {posts.slice(0, 3).map(post => (
             <article className="column" key={post.node.id}>
               <div className="card-basic">
                 <Link to={post.node.fields.slug}>
