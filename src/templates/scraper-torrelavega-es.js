@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { formatDate } from "../utils/helpers"
 
-export default ({ pageContext: { webData } }) => {
-  const data = webData.webInfo
+export default ({ pageContext: { data } }) => {
+  const scraperData = data.scraperData
   return (
     <Layout>
       <div className="scraper-page">
@@ -24,7 +24,7 @@ export default ({ pageContext: { webData } }) => {
           <div className="columns">
             <div className="column is-12">
               <ul>
-                {data.map((value, index) => {
+                {scraperData.map((value, index) => {
                   return (
                     <li key={index}>
                       <a

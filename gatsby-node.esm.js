@@ -1,16 +1,18 @@
+import { getData } from "./src/utils/scraper-torrelavega-es"
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-import { getData } from "./src/utils/scraper-torrelavega-es"
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const webInfo = await getData().then(response => {
+  const scraperData = await getData().then(response => {
     return response
   })
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const webInfoPage = path.resolve(`./src/templates/webPage.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const scraperTemplate = path.resolve(
+    `./src/templates/scraper-torrelavega-es.js`
+  )
   const result = await graphql(
     `
       {
@@ -46,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -58,8 +60,8 @@ exports.createPages = async ({ graphql, actions }) => {
   // Crea página de enlaces
   createPage({
     path: `/torrelavega`,
-    component: webInfoPage,
-    context: { webData: { webInfo } },
+    component: scraperTemplate,
+    context: { data: { scraperData } },
   })
 }
 
