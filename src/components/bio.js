@@ -28,7 +28,7 @@ const Bio = () => {
     <div className="bio">
       <p>
         <strong>{author}</strong> es un proyecto colaborativo que trata de
-        servir información a los ciudadanos de Torlavega.
+        servir información a los ciudadanos de Torrelavega.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           Le puedes seguir en Twitter
