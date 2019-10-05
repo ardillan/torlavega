@@ -17,7 +17,7 @@ header {
     align-content: space-between;
     a {
       text-decoration: none;
-      padding-right: 10px;
+      margin-right: 10px;
       text-transform: uppercase;
       font-size: 14px;
       color: $text-color-dark;
@@ -72,15 +72,6 @@ footer {
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $secondary-font;
-  }
-
   a {
     color: $text-color-dark;
     background: $text-color-link;
@@ -108,8 +99,17 @@ footer {
 }
 
 .bio {
-  background: #ffffd1;
+  background: #ffffde;
   border-radius: 5px;
   padding: 30px;
   margin-bottom: 50px;
+  a {
+    background: none;
+    text-decoration: underline;
+    &:hover {
+      outline: none;
+      background: $primary-color-light;
+      border-width: 2px;
+    }
+  }
 }

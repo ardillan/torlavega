@@ -8,6 +8,15 @@
 
   a {
     text-decoration: none;
+    &:active {
+      color: initial;
+      outline: dashed $primary-color;
+      outline-width: 1px;
+      outline-offset: 2px;
+    }
+    &:visited {
+      color: initial;
+    }
   }
 
   h1 {
