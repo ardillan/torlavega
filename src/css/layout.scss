@@ -1,5 +1,6 @@
 .container {
   max-width: 720px;
+  margin: auto;
 }
 
 body {
@@ -39,7 +40,6 @@ footer {
       h1 {
         font-family: $secondary-font !important;
         font-size: 40px;
-        font-weight: 700;
         line-height: 46px;
         width: 70%;
         text-transform: uppercase;
@@ -48,7 +48,7 @@ footer {
       .description {
         font-family: $main-font;
         text-transform: none;
-        font-weight: 500;
+
         margin-bottom: 20px;
       }
 
@@ -71,6 +71,16 @@ footer {
       }
     }
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $secondary-font;
+  }
+
   a {
     color: $text-color-dark;
     background: $text-color-link;
@@ -87,20 +97,19 @@ footer {
     }
 
     li {
-      border: 2px solid $primary-color-dark;
-      border-radius: 3px;
-      padding: 0px;
-      background: white;
-      text-align: center;
       display: flex;
       align-items: center;
-      justify-content: center;
+
+      &:last-child {
+        flex-flow: row-reverse;
+      }
     }
   }
 }
 
 .bio {
-  background: $primary-color-lighter;
+  background: #ffffd1;
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
+  margin-bottom: 50px;
 }

@@ -17,7 +17,7 @@ class Blog extends React.Component {
         <section className="section">
           <div className="columns is-multiline">
             {posts.map(post => (
-              <article className="column" key={post.node.id}>
+              <article className="column is-4" key={post.node.id}>
                 <div className="card-basic">
                   <Link to={post.node.fields.slug}>
                     <header>
@@ -69,13 +69,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            thumbnail {
-              childImageSharp {
-                fixed(width: 400) {
-                  src
-                }
-              }
-            }
           }
         }
       }
