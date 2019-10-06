@@ -18,9 +18,9 @@ export default props => {
 
       <section className="main-banner">
         <div className="columns">
-          <Link to="/proyecto">
+          <Link to="/scraper-torrelavega">
             <div className="column is-10 is-offset-1">
-              <h1>Test site</h1>
+              <h1>Datos del ayuntamiento</h1>
               <h2>
                 Proyecto colaborativo independiente para la ciudad de Torlavega
               </h2>
