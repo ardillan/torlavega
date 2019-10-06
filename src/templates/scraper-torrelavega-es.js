@@ -7,8 +7,7 @@ import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { data } }) => {
   const scraperData = data.scraperData
-
-  let currentMonth
+  let currentMonth = ""
 
   const getMonth = date =>
     new Date(date).toLocaleDateString("es-ES", {
@@ -24,6 +23,22 @@ export default ({ pageContext: { data } }) => {
       return nextMonth
     }
   }
+
+  const calculateTotalMonthNews = (currentMonth, lastYearNews) => {
+    let totalMonthNews = 0
+    currentMonth = getMonth(currentMonth)
+    lastYearNews.map((value, index) => {
+      if (index !== lastYearNews.length - 1) {
+        if (currentMonth === getMonth(lastYearNews[index + 1].date)) {
+          totalMonthNews++
+        }
+      }
+    })
+    return totalMonthNews
+  }
+
+  // console.log(scraperData.slice(15, 80)
+  // return <p>saturday superhouse</p>
   return (
     <Layout>
       <SEO
@@ -69,7 +84,16 @@ export default ({ pageContext: { data } }) => {
                 {scraperData.map((value, index, array) => {
                   return (
                     <div key={index}>
-                      <h2>{showMonth(value.date)}</h2>
+                      <div className="is-flex" style={{}}>
+                        <h3>
+                          {getMonth(value.date) !== currentMonth
+                            ? calculateTotalMonthNews(value.date, array)
+                            : ""}
+                        </h3>
+                        <h3 style={{ textTransform: "capitalize" }}>
+                          {showMonth(value.date)}
+                        </h3>
+                      </div>
                       <li>
                         <a
                           href={`http://www.torrelavega.es${value.link}`}
