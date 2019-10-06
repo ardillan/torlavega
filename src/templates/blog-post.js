@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
 
-        <main className="blog-post">
+        <main className="blog-layout">
           <section className="section">
             <article>
               <header className="card-basic is-flex">
