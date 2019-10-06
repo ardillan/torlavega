@@ -19,11 +19,12 @@ a {
   &:active {
     color: initial;
   }
-  &:hover {
-    outline: dashed $primary-color-light;
-    outline-width: 1px;
-    outline-offset: 2px;
-  }
+}
+
+hr {
+  margin: 30px 0 30px 0;
+  border: transparent;
+  border-top: 1px solid $primary-color-light;
 }
 
 section {
@@ -32,7 +33,7 @@ section {
     height: 250px;
     border-radius: 3px;
     align-items: center;
-
+    display: flex;
     h1,
     p {
       color: white;
@@ -40,7 +41,6 @@ section {
 
     h2 {
       font-family: "Inter";
-
       font-size: 17px;
       color: white;
       text-transform: none;

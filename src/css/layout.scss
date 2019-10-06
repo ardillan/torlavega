@@ -31,7 +31,7 @@ footer {
 }
 
 // Blog Layout
-.blog-post {
+.blog-layout {
   header {
     &.card-basic {
       padding: 30px;
@@ -48,7 +48,7 @@ footer {
       .description {
         font-family: $main-font;
         text-transform: none;
-
+        font-size: 17px;
         margin-bottom: 20px;
       }
 
@@ -99,12 +99,15 @@ footer {
 }
 
 // Scraper Layout
-.scraper-page {
+.scraper-layout {
   li {
     margin-bottom: 10px;
-    background: $yellow-light;
+    background: $yellow-lighter;
     padding: 15px;
     border-radius: 3px;
+  }
+  a {
+    text-transform: capitalize;
   }
 }
 
