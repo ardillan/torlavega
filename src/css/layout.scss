@@ -105,9 +105,13 @@ footer {
     background: $yellow-lighter;
     padding: 15px;
     border-radius: 3px;
+    a {
+      text-transform: capitalize;
+    }
   }
-  a {
-    text-transform: capitalize;
+
+  .has-published-today {
+    border: 1px dashed #8a00ff;
   }
 }
 

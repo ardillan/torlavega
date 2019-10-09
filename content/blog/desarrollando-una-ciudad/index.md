@@ -3,6 +3,7 @@ title: "Desarrollando una ciudad"
 date: "2018-02-28T20:00:00.0100"
 type: "blog"
 thumbnail: "./thumbnail.jpg"
+description: "esto es una descripcio´n"
 category:
   - General
 ---

@@ -8,21 +8,13 @@ export default () => (
     <SEO title="El proyecto"></SEO>
     <section>
       <div className="columns">
-        <div className="column is-12">
+        <div className="column">
           <h1>DESARROLLANDO UNA CIUDAD</h1>
-          <h2
-            style={{
-              fontFamily: "Inter",
-              textTransform: "none",
-              fontSize: 21,
-              lineHeigh: 27,
-              fontWeight: "initial",
-            }}
-          >
+          <h4>
             Para que este proyecto adopte un buen camino será necesario recoger
             la máxima cantidad ideas posible. Para ello puedes enviar un correo
             electrónico o bien contactar vía Twitter.
-          </h2>
+          </h4>
           <p>
             Lorem Ipsum es simplemente el texto de relleno de las imprentas y
             archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
