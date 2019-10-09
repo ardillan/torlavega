@@ -7,6 +7,7 @@ import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { data } }) => {
   const scraperData = data.scraperData
+  console.log(scraperData)
   let currentMonth = ""
 
   const getMonth = date =>
@@ -23,6 +24,24 @@ export default ({ pageContext: { data } }) => {
       return nextMonth
     }
   }
+  const hasPublishedToday = newDate => {
+    let today = new Date()
+    return formatDate(today) === formatDate(newDate) ? true : false
+  }
+
+  const todayPublishedNews = news => {
+    let todayNews = 0
+
+    news.map(value => {
+      if (hasPublishedToday(value.date)) {
+        todayNews++
+      }
+
+      return todayNews
+    })
+
+    return todayNews
+  }
 
   const calculateTotalMonthNews = (currentMonth, lastYearNews) => {
     let totalMonthNews = 0
@@ -33,12 +52,11 @@ export default ({ pageContext: { data } }) => {
           totalMonthNews++
         }
       }
+      return null
     })
     return totalMonthNews
   }
 
-  // console.log(scraperData.slice(15, 80)
-  // return <p>saturday superhouse</p>
   return (
     <Layout>
       <SEO
@@ -80,21 +98,27 @@ export default ({ pageContext: { data } }) => {
               </p>
               <hr />
               <h2>Listado de noticias</h2>
+              <small>
+                Se muestra un total de 500 noticias | Hoy se han publicado{" "}
+                {todayPublishedNews(scraperData)} noticias
+              </small>
+              <hr className="transparent-separator" />
               <ul>
-                {scraperData.map((value, index, array) => {
+                {scraperData.map((value, index) => {
                   return (
                     <div key={index}>
                       <div className="is-flex" style={{}}>
-                        <h3>
-                          {getMonth(value.date) !== currentMonth
-                            ? calculateTotalMonthNews(value.date, array)
-                            : ""}
-                        </h3>
                         <h3 style={{ textTransform: "capitalize" }}>
                           {showMonth(value.date)}
                         </h3>
                       </div>
-                      <li>
+                      <li
+                        className={
+                          hasPublishedToday(value.date)
+                            ? "has-published-today"
+                            : ""
+                        }
+                      >
                         <a
                           href={`http://www.torrelavega.es${value.link}`}
                           target="_blank"
@@ -104,7 +128,7 @@ export default ({ pageContext: { data } }) => {
                           {value.title}
                         </a>
                         <br />
-                        <time dateTime={value.date}>
+                        <time dateTime={formatDate(value.date)}>
                           {formatDate(value.date, "Readable")}
                         </time>
                       </li>
