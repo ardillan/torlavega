@@ -7,6 +7,11 @@ const Contacto = () => {
   return (
     <Layout>
       <SEO title="Contacto"></SEO>
+      <h1>Contacto</h1>
+      <p>
+        Puedes contactar mediante un mensaje a la cuenta de Twitter de
+        <a href="https://twitter.com/datos_torlavega"> Torlavega</a>
+      </p>
     </Layout>
   )
 }

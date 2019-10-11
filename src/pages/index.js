@@ -15,18 +15,15 @@ export default props => {
   return (
     <Layout location={props.location} title="Inicio">
       <SEO title="Inicio" />
-
       <section className="main-banner">
         <div className="columns">
           <Link to="/scraper-torrelavega">
             <div className="column is-10 is-offset-1">
               <h1>Datos del ayuntamiento</h1>
-              <h2>
-                Proyecto colaborativo independiente para la ciudad de Torlavega
-              </h2>
+              <h2>Proyecto colaborativo independiente</h2>
               <p>
-                Esta web tratará de recopilar el máximo número de datos
-                disponibles para los ciudadanos de Torlavega.
+                Página donde se muestran las últimas noticias publicadas por el
+                ayuntamiento
               </p>
             </div>
           </Link>
@@ -41,14 +38,17 @@ export default props => {
             </Link>
           </div>
           <div className="column is-flex">
-            <a href="https://github.com/ardillan/torlavega" className="button">
+            <a href="/" className="button">
               Motivación
             </a>
           </div>
           <div className="column is-flex">
-            <Link to="" className="button">
+            <a
+              href="https://github.com/ardillan/torlavega/issues"
+              className="button"
+            >
               Quiero colaborar
-            </Link>
+            </a>
           </div>
         </div>
       </section>

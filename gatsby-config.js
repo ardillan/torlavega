@@ -4,9 +4,9 @@ module.exports = {
     subtitle: `Proyecto colaborativo`,
     author: `Torlavega`,
     description: `Web que trata de recopilar el máximo número de datos disponibles para los ciudadanos de Torlavega y transformarlos en información útil.`,
-    siteUrl: `https://torlavega.com/`,
+    siteUrl: `https://www.torlavega.com/`,
     social: {
-      twitter: `datos.torlavega`,
+      twitter: `datos_torlavega`,
     },
   },
   plugins: [
