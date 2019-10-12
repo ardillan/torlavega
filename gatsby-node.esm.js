@@ -59,7 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Crea página de enlaces
   createPage({
-    path: `/scraper-torrelavega`,
+    path: `/datos-del-ayuntamiento`,
     component: scraperTemplate,
     context: { data: { scraperData } },
   })

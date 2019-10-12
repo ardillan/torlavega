@@ -17,7 +17,7 @@ export default props => {
       <SEO title="Inicio" />
       <section className="main-banner">
         <div className="columns">
-          <Link to="/scraper-torrelavega">
+          <Link to="/datos-del-ayuntamiento">
             <div className="column is-10 is-offset-1">
               <h1>Datos del ayuntamiento</h1>
               <h2>Proyecto colaborativo independiente</h2>
