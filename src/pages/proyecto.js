@@ -9,25 +9,38 @@ export default () => (
     <section>
       <div className="columns">
         <div className="column">
-          <h1>DESARROLLANDO UNA CIUDAD</h1>
+          <h1>El proyecto</h1>
           <h4>
-            Para que este proyecto adopte un buen camino será necesario recoger
-            la máxima cantidad ideas posible. Para ello puedes enviar un correo
-            electrónico o bien contactar vía Twitter.
+            Torlavega.com es un proyecto colaborativo con el que se quiere
+            recolectar la máxima cantidad de datos.
           </h4>
           <p>
-            Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-            archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-            de las industrias desde el año 1500, cuando un impresor (N. del T.
-            persona que se dedica a la imprenta) desconocido usó una galería de
-            textos y los mezcló de tal manera que logró hacer un libro de textos
-            especimen. No sólo sobrevivió 500 años, sino que tambien ingresó
-            como texto de relleno en documentos electrónicos, quedando
-            esencialmente igual al original. Fue popularizado en los 60s con la
-            creación de las hojas "Letraset", las cuales contenian pasajes de
-            Lorem Ipsum, y más recientemente con software de autoedición, como
-            por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
-            Ipsum.
+            Hoy en día el proceso de digitalización del que estamos siendo
+            testigos es imparable: la lista de la compra, la cita del médico, el
+            callejero de tu ciudad... la inmensa mayoría se encuentra disponible
+            desde nuestro teléfono móvil.
+          </p>
+
+          <p>
+            Es un proceso que tiene ventajas e incovenientes. Este breve
+            artículo titulado{" "}
+            <a href="https://blog.virgulilla.com/2018/07/24/alfabetización-digital/">
+              "Alfabetización digital"
+            </a>{" "}
+            amplía esta idea sobre cómo hay que reflexionar en este proceso de
+            digitalización.
+          </p>
+
+          <p>
+            Esta proyecto quiere poner en alza uno los valores que tiene la
+            digitalización: la <strong>reutilización de datos</strong> y su
+            puesta al servicio los ciudadanos. En este caso de nuestra ciudad,
+            <a href="https://es.wikipedia.org/wiki/Torrelavega">Torrelavega</a>.
+            Por ello, el{" "}
+            <a href="https://github.com/ardillan/torlavega">
+              código de esta web es abierto
+            </a>{" "}
+            y está disponible para toda aquella persona que quiera participar.
           </p>
         </div>
       </div>
