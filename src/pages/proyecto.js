@@ -12,7 +12,8 @@ export default () => (
           <h1>El proyecto</h1>
           <h4>
             Torlavega.com es un proyecto colaborativo con el que se quiere
-            recolectar la máxima cantidad de datos.
+            recolectar la máxima cantidad de datos para ponerlos a disposición
+            de todo el mundo.
           </h4>
           <p>
             Hoy en día el proceso de digitalización del que estamos siendo
@@ -27,12 +28,12 @@ export default () => (
             <a href="https://blog.virgulilla.com/2018/07/24/alfabetización-digital/">
               "Alfabetización digital"
             </a>{" "}
-            amplía esta idea sobre cómo hay que reflexionar en este proceso de
+            amplía esta idea sobre cómo hay que reflexionar en esta adopción de
             digitalización.
           </p>
 
           <p>
-            Esta proyecto quiere poner en alza uno los valores que tiene la
+            Este proyecto quiere poner en alza uno los valores que tiene la
             digitalización: la <strong>reutilización de datos</strong> y su
             puesta al servicio los ciudadanos. En este caso de nuestra ciudad,
             <a href="https://es.wikipedia.org/wiki/Torrelavega">Torrelavega</a>.
