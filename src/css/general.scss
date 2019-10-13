@@ -3,6 +3,10 @@ html {
   font-family: $main-font;
 }
 
+::selection {
+  background-color: $yellow-light;
+}
+
 .navbar-brand {
   padding: 10px 30px;
 }
