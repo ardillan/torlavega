@@ -15,9 +15,9 @@ export default props => {
   return (
     <Layout location={props.location} title="Inicio">
       <SEO title="Inicio" />
-      <section className="main-banner">
-        <div className="columns">
-          <Link to="/datos-del-ayuntamiento">
+      <Link to="/datos-del-ayuntamiento">
+        <section className="main-banner">
+          <div className="columns">
             <div className="column is-10 is-offset-1">
               <h1>Datos del ayuntamiento</h1>
               <h2>Proyecto colaborativo independiente</h2>
@@ -26,9 +26,9 @@ export default props => {
                 ayuntamiento
               </p>
             </div>
-          </Link>
-        </div>
-      </section>
+          </div>
+        </section>
+      </Link>
       <hr className="separator" />
       <section>
         <div className="columns">
