@@ -28,6 +28,13 @@ header {
 footer {
   margin: 50px 0 0 0;
   text-align: center;
+  a {
+    color: $primary-color;
+
+    &:hover {
+      background: $text-color-link;
+    }
+  }
 }
 
 // Blog Layout
