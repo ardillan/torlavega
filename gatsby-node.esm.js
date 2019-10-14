@@ -5,9 +5,14 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const scraperData = await getData().then(response => {
+  const scraper = await getData().then(response => {
     return response
   })
+
+  const scraperData = {
+    data: scraper,
+    time: new Date().getTime(),
+  }
 
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const scraperTemplate = path.resolve(

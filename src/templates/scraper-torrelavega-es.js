@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { data } }) => {
-  const scraperData = data.scraperData
-  console.log(scraperData)
+  const scraperData = data.scraperData.data
+  const lastBuild = data.scraperData.time
+
   let currentMonth = ""
 
   const getMonth = date =>
@@ -98,10 +99,14 @@ export default ({ pageContext: { data } }) => {
               </p>
               <hr />
               <h2>Listado de noticias</h2>
+              <small>Se muestra un total de 500 noticias</small>
+              <br />
               <small>
-                Se muestra un total de 500 noticias | Hoy se han publicado{" "}
-                {todayPublishedNews(scraperData)} noticias
+                Última actualización {formatDate(lastBuild, "DD/MM/YYYY:HH/MM")}{" "}
+                | Hoy se han publicado {todayPublishedNews(scraperData)}{" "}
+                noticias
               </small>
+
               <hr className="transparent-separator" />
               <ul>
                 {scraperData.map((value, index) => {
