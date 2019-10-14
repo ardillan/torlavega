@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 export default () => (
   <Layout>
     <SEO title="El proyecto"></SEO>
-    <section>
+    <section className="page-layout">
       <div className="columns">
         <div className="column">
           <h1>El proyecto</h1>
