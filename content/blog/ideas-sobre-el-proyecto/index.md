@@ -9,7 +9,7 @@ category:
 
 ## Necesitamos ideas
 
-Este proyecto ha nacido bajo una premisa clara, la participación. Todo el mundo es bienvenido y puede aportar su granito de arena con ideas y ocurrencias para hacer que la web adquiera mayor envergadura y sea más útil.
+Este proyecto ha nacido bajo una premisa clara, la **participación**. Todo el mundo es bienvenido y puede aportar su granito de arena con ideas y ocurrencias para hacer que la web adquiera mayor envergadura y sea más útil.
 
 ## ¿A qué te refires con ideas?
 
