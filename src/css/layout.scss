@@ -37,6 +37,19 @@ footer {
   }
 }
 
+// Page layout
+.page-layout {
+  a {
+    color: $text-color-dark;
+    background: $text-color-link;
+    &:hover {
+      outline: dashed $primary-color-light;
+      outline-width: 1px;
+      outline-offset: 2px;
+    }
+  }
+}
+
 // Blog Layout
 .blog-layout {
   header {
