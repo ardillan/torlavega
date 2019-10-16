@@ -38,9 +38,9 @@ export default props => {
             </Link>
           </div>
           <div className="column is-flex">
-            <a href="/motivacion" className="button">
+            <Link to="/motivacion" className="button">
               Motivación
-            </a>
+            </Link>
           </div>
           <div className="column is-flex">
             <a
