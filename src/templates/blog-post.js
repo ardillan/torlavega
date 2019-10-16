@@ -20,8 +20,6 @@ class BlogPostTemplate extends React.Component {
       day: "numeric",
     })
 
-    console.log(this.props)
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO

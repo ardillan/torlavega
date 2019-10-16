@@ -11,7 +11,7 @@ import "../css/styles.scss"
 
 export default props => {
   const posts = getPosts()
-  console.log(posts)
+
   return (
     <Layout location={props.location} title="Inicio">
       <SEO title="Inicio" />
