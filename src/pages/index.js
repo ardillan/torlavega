@@ -7,8 +7,6 @@ import SEO from "../components/seo"
 
 import { formatDate } from "../utils/helpers"
 
-import "../css/styles.scss"
-
 export default props => {
   const posts = getPosts()
 
