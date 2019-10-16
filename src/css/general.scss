@@ -49,6 +49,11 @@ section {
       color: white;
       text-transform: none;
     }
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 30px;
+      height: initial;
+    }
   }
 }
 

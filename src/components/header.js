@@ -5,9 +5,15 @@ export default () => {
   return (
     <header>
       <nav>
-        <Link to="/">Inicio</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/contacto">Contacto</Link>
+        <Link to="/" activeClassName="active">
+          Inicio
+        </Link>
+        <Link to="/blog" activeClassName="active">
+          Blog
+        </Link>
+        <Link to="/contacto" activeClassName="active">
+          Contacto
+        </Link>
       </nav>
     </header>
   )

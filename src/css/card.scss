@@ -71,4 +71,10 @@
       background: #9692c5;
     }
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    header {
+      height: initial;
+    }
+  }
 }
