@@ -44,20 +44,6 @@ export default ({ pageContext: { data } }) => {
     return todayNews
   }
 
-  const calculateTotalMonthNews = (currentMonth, lastYearNews) => {
-    let totalMonthNews = 0
-    currentMonth = getMonth(currentMonth)
-    lastYearNews.map((value, index) => {
-      if (index !== lastYearNews.length - 1) {
-        if (currentMonth === getMonth(lastYearNews[index + 1].date)) {
-          totalMonthNews++
-        }
-      }
-      return null
-    })
-    return totalMonthNews
-  }
-
   return (
     <Layout>
       <SEO
@@ -112,7 +98,7 @@ export default ({ pageContext: { data } }) => {
                 {scraperData.map((value, index) => {
                   return (
                     <div key={index}>
-                      <div className="is-flex" style={{}}>
+                      <div className="is-flex">
                         <h3 style={{ textTransform: "capitalize" }}>
                           {showMonth(value.date)}
                         </h3>
