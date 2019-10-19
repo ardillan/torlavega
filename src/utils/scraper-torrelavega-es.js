@@ -27,7 +27,7 @@ export const getData = async () => {
         data.push({
           title: title.replace(/\s+/g, " "),
           link,
-          date: new Date(replaceMonth(date.replace("00:00", "23:00"))),
+          date: new Date(replaceMonth(date.replace("00:00", "12:00"))),
         })
       })
       return data
