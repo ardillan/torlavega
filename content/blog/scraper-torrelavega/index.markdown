@@ -48,4 +48,4 @@ Básicamente lo que nos encontramos es un recorrido completo por la página dond
 
 ## Resultado
 
-Gracias a esta pequeña utilidad, se ha creado [esta página](datos-del-ayuntamiento) donde veremos una réplica del sitio web mencionado arriba, con menos carga visual y con la posibilidad de tratar los datos de una manera libre. Por ejemplo, se ha añadido la posibilidad de agrupar por meses las noticias, además se añade la posibilidad de ver cuántas noticias se han publicado en el día actual.
+Gracias a esta pequeña utilidad, se ha creado [esta página](/datos-del-ayuntamiento) donde veremos una réplica del sitio web mencionado arriba, con menos carga visual y con la posibilidad de tratar los datos de una manera libre. Por ejemplo, se ha añadido la posibilidad de agrupar por meses las noticias, además se añade la posibilidad de ver cuántas noticias se han publicado en el día actual.
