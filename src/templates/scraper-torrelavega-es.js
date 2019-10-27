@@ -1,4 +1,14 @@
 import React from "react"
+import {
+  ResponsiveContainer,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  AreaChart,
+  Area,
+  Label,
+} from "recharts"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,12 +18,13 @@ import { formatDate } from "../utils/helpers"
 export default ({ pageContext: { data } }) => {
   const scraperData = data.scraperData.data
   const lastBuild = data.scraperData.time
-
   let currentMonth = ""
-  const getMonth = date =>
-    new Date(date).toLocaleDateString("es-ES", {
+
+  const getMonth = date => {
+    return new Date(date).toLocaleDateString("es-ES", {
       month: "long",
     })
+  }
 
   const showMonth = date => {
     let nextMonth = getMonth(date)
@@ -24,6 +35,7 @@ export default ({ pageContext: { data } }) => {
       return true
     }
   }
+
   const hasPublishedToday = newDate => {
     let today = new Date()
     return formatDate(today) === formatDate(newDate) ? true : false
@@ -58,6 +70,7 @@ export default ({ pageContext: { data } }) => {
         totalNews++
       } else {
         groupedMonthNews[`${getMonth(currentValue.date)}`] = {
+          name: getMonth(currentValue.date),
           total: totalNews + 1,
         }
         totalNews = 0
@@ -68,6 +81,10 @@ export default ({ pageContext: { data } }) => {
   }
 
   const totalMonthNews = getTotalMonthNews()
+
+  let totalMonthsNewsChart = Object.keys(totalMonthNews).map(key => {
+    return totalMonthNews[key]
+  })
 
   return (
     <Layout>
@@ -109,6 +126,37 @@ export default ({ pageContext: { data } }) => {
                 conclusiones acerca de la información obtenida.
               </p>
               <hr />
+              <h2>Gráfica de publicaciones</h2>
+              <div style={{ width: "100%", height: 450 }}>
+                <ResponsiveContainer>
+                  <AreaChart
+                    data={totalMonthsNewsChart}
+                    margin={{
+                      top: 80,
+                      right: 0,
+                      left: 0,
+                      bottom: 80,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="2 2" />
+                    <XAxis dataKey="name">
+                      <Label
+                        value="Número de noticias por mes"
+                        position="bottom"
+                        margin={{ top: 30 }}
+                      />{" "}
+                    </XAxis>
+                    <YAxis />
+                    <Tooltip />
+                    <Area
+                      type="monotone"
+                      dataKey="total"
+                      stroke="#8884d8"
+                      fill="#ffffe0"
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
               <h2>Listado de noticias</h2>
               <small>Se muestra un total de 500 noticias</small>
               <br />
