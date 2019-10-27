@@ -32,7 +32,8 @@
     "puppeteer": "^1.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "recharts": "^1.8.5"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
