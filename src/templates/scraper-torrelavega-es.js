@@ -10,7 +10,6 @@ export default ({ pageContext: { data } }) => {
   const lastBuild = data.scraperData.time
 
   let currentMonth = ""
-
   const getMonth = date =>
     new Date(date).toLocaleDateString("es-ES", {
       month: "long",
@@ -19,10 +18,10 @@ export default ({ pageContext: { data } }) => {
   const showMonth = date => {
     let nextMonth = getMonth(date)
     if (currentMonth === nextMonth) {
-      return ""
+      return false
     } else {
       currentMonth = nextMonth
-      return nextMonth
+      return true
     }
   }
   const hasPublishedToday = newDate => {
@@ -43,6 +42,32 @@ export default ({ pageContext: { data } }) => {
 
     return todayNews
   }
+
+  const getTotalMonthNews = () => {
+    let totalNews = 0
+    let groupedMonthNews = {}
+    let nextMonth = getMonth(scraperData[0].date)
+    scraperData.reduce((accumulator, currentValue, index, array) => {
+      if (index + 1 !== array.length) {
+        nextMonth = getMonth(array[index + 1].date)
+      } else {
+        nextMonth = ""
+      }
+
+      if (getMonth(currentValue.date) === nextMonth) {
+        totalNews++
+      } else {
+        groupedMonthNews[`${getMonth(currentValue.date)}`] = {
+          total: totalNews + 1,
+        }
+        totalNews = 0
+      }
+    }, {})
+
+    return groupedMonthNews
+  }
+
+  const totalMonthNews = getTotalMonthNews()
 
   return (
     <Layout>
@@ -100,7 +125,15 @@ export default ({ pageContext: { data } }) => {
                     <div key={index}>
                       <div className="is-flex">
                         <h3 style={{ textTransform: "capitalize" }}>
-                          {showMonth(value.date)}
+                          {showMonth(value.date) ? (
+                            <>
+                              {getMonth(value.date)} |{" "}
+                              {totalMonthNews[`${getMonth(value.date)}`].total}{" "}
+                              noticias
+                            </>
+                          ) : (
+                            ""
+                          )}
                         </h3>
                       </div>
                       <li
