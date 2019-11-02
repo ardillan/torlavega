@@ -40,6 +40,23 @@ header {
       margin: 0 0 0 auto;
     }
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    nav {
+      .last-item {
+        text-decoration: none;
+        text-transform: uppercase;
+        background: white;
+        padding: 0 0px;
+        background: transparent;
+        border-radius: 3px;
+        font-size: 12px;
+        margin: 0 0 0 auto;
+        line-height: 14px;
+        text-align: center;
+      }
+    }
+  }
 }
 
 footer {
