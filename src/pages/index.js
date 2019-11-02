@@ -23,6 +23,7 @@ export default props => {
                 Página donde se muestran las últimas noticias publicadas por el
                 ayuntamiento
               </p>
+              <button>Ver página</button>
             </div>
           </div>
         </section>
