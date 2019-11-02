@@ -28,6 +28,17 @@ header {
         border-radius: 5px;
       }
     }
+
+    .last-item {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #6620a7;
+      padding: 0 10px;
+      background: $yellow-lighter;
+      border-radius: 3px;
+      font-size: 12px;
+      margin: 0 0 0 auto;
+    }
   }
 }
 

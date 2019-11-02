@@ -14,6 +14,7 @@ export default () => {
         <Link to="/contacto" activeClassName="active">
           Contacto
         </Link>
+        <p className="last-item">VERSIÓN BETA</p>
       </nav>
     </header>
   )
