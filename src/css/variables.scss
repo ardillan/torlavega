@@ -30,3 +30,7 @@ $basic-margin: 25px;
 // Breakpoint
 $breakpoint-fullhd: 300px + (2 * $gap);
 $breakpoint-tablet: 720px + (2 * $gap);
+
+// Animations
+$time: 0.2s;
+$ease: ease-in;
