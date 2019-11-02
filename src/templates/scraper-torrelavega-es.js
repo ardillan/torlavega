@@ -118,7 +118,6 @@ export default ({ pageContext: { data } }) => {
                   esta sección.
                 </a>{" "}
               </p>
-
               <h4>Objetivo</h4>
               <p>
                 El objetivo será recorrer las últimas 500 noticias del
@@ -127,10 +126,22 @@ export default ({ pageContext: { data } }) => {
               </p>
               <hr />
               <h2>Gráfica de publicaciones</h2>
+              <p>
+                La siguiente gráfica muestra el total de noticias publicadas por
+                mes. En ella se ven reflejados el número de noticias que ha
+                publicado el ayuntamiento, siempre a mes vencido.
+              </p>
+              <p>
+                {" "}
+                Si se sitúa el ratón sobre ella se podrá ver el detalle de la
+                cantidad de noticias y la fecha a la que corresponde.
+              </p>
               <div style={{ width: "100%", height: 450 }}>
                 <ResponsiveContainer>
                   <AreaChart
-                    data={totalMonthsNewsChart}
+                    data={totalMonthsNewsChart
+                      .slice(1, totalMonthsNewsChart.length - 1)
+                      .reverse()}
                     margin={{
                       top: 80,
                       right: 0,
@@ -143,7 +154,7 @@ export default ({ pageContext: { data } }) => {
                       <Label
                         value="Número de noticias por mes"
                         position="bottom"
-                        margin={{ top: 30 }}
+                        margin={{ top: 50 }}
                       />{" "}
                     </XAxis>
                     <YAxis />
@@ -165,7 +176,6 @@ export default ({ pageContext: { data } }) => {
                 | Hoy se han publicado {todayPublishedNews(scraperData)}{" "}
                 noticias
               </small>
-
               <hr className="transparent-separator" />
               <ul>
                 {scraperData.map((value, index) => {
