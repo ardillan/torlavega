@@ -154,18 +154,36 @@ footer {
 
 // Scraper Layout
 .scraper-layout {
-  li {
-    margin-bottom: 10px;
-    background: $yellow-lighter;
-    padding: 15px;
-    border-radius: 3px;
-    a {
-      text-transform: capitalize;
+  ul {
+    div {
+      li {
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border-radius: 3px;
+        time {
+          color: $text-color-grey;
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+        a {
+          text-transform: capitalize;
+        }
+      }
+      &:last-child {
+        text-align: center;
+        p {
+          font-size: 12px;
+          color: $text-color-dark;
+          text-transform: uppercase;
+          margin-top: 20px;
+          border-top: 1px solid $primary-color-light;
+          padding-top: 20px !important;
+        }
+      }
     }
   }
-
   .has-published-today {
-    border: 1px dashed #8a00ff;
+    border: 1px dashed $primary-color;
   }
 }
 
