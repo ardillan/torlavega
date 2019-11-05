@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import {
   ResponsiveContainer,
   CartesianGrid,
@@ -9,16 +9,50 @@ import {
   Area,
   Label,
 } from "recharts"
-
+import Loader from "../components/loader"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { formatDate } from "../utils/helpers"
 
 export default ({ pageContext: { data } }) => {
-  const scraperData = data.scraperData.data
+  const allScraperData = data.scraperData.data
   const lastBuild = data.scraperData.time
   let currentMonth = ""
+
+  const [isFetching, setIsFetching] = useState(false)
+  const [scraperData, setScraperData] = useState(
+    data.scraperData.data.slice(0, 25)
+  )
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    if (!isFetching) return
+    if (scraperData.length !== allScraperData.length) {
+      fetchMoreData()
+    }
+  }, [isFetching])
+
+  const fetchMoreData = () => {
+    setScraperData(prevState => [
+      ...prevState,
+      ...allScraperData.slice(scraperData.length, scraperData.length + 125),
+    ])
+    setIsFetching(false)
+  }
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight ||
+      isFetching
+    ) {
+      return setIsFetching(true)
+    }
+  }
 
   const getMonth = date => {
     return new Date(date).toLocaleDateString("es-ES", {
@@ -58,8 +92,8 @@ export default ({ pageContext: { data } }) => {
   const getTotalMonthNews = () => {
     let totalNews = 0
     let groupedMonthNews = {}
-    let nextMonth = getMonth(scraperData[0].date)
-    scraperData.reduce((accumulator, currentValue, index, array) => {
+    let nextMonth = getMonth(allScraperData[0].date)
+    allScraperData.reduce((accumulator, currentValue, index, array) => {
       if (index + 1 !== array.length) {
         nextMonth = getMonth(array[index + 1].date)
       } else {
@@ -90,7 +124,7 @@ export default ({ pageContext: { data } }) => {
     <Layout>
       <SEO
         title="Scraper de Torrelavega.es"
-        description="Pequeña utilidad que recoge los datos de la web del ayuntamiento de Torrelavega, los muestra y realizar un pequeño análisis."
+        description="Pequeña utilidad que recoge los datos de la web del ayuntamiento de Torrelavega, los muestra y realiza un pequeño análisis."
       />
       <div className="scraper-layout blog-layout">
         <section>
@@ -136,7 +170,9 @@ export default ({ pageContext: { data } }) => {
                 Si se sitúa el ratón sobre ella se podrá ver el detalle de la
                 cantidad de noticias y la fecha a la que corresponde.
               </p>
-              <div style={{ width: "100%", height: 450 }}>
+              <div
+                style={{ width: "100%", height: 450, margin: "0 auto 0 -30px" }}
+              >
                 <ResponsiveContainer>
                   <AreaChart
                     data={totalMonthsNewsChart
@@ -173,7 +209,7 @@ export default ({ pageContext: { data } }) => {
               <br />
               <small>
                 Última actualización {formatDate(lastBuild, "DD/MM/YYYY:HH/MM")}{" "}
-                | Hoy se han publicado {todayPublishedNews(scraperData)}{" "}
+                | Hoy se han publicado {todayPublishedNews(allScraperData)}{" "}
                 noticias
               </small>
               <hr className="transparent-separator" />
@@ -217,6 +253,17 @@ export default ({ pageContext: { data } }) => {
                     </div>
                   )
                 })}
+                <li>
+                  {scraperData.length !== allScraperData.length ? (
+                    <div>
+                      <Loader />
+                    </div>
+                  ) : (
+                    <div>
+                      <p>No hay más noticias publicadas</p>
+                    </div>
+                  )}
+                </li>
               </ul>
             </div>
           </div>
