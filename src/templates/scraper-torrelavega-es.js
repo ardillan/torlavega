@@ -109,6 +109,8 @@ export default ({ pageContext: { data } }) => {
         }
         totalNews = 0
       }
+
+      return null
     }, {})
 
     return groupedMonthNews
