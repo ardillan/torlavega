@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "torlavega.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Página web que recopila datos relacionados con la ciudad de Torrelavega",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Torlavega <datos.torlavega@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ardillan/torlavega/issues"
   },
   "dependencies": {
     "axios": "^0.19.0",
