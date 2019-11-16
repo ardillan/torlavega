@@ -13,7 +13,7 @@ Antes de nada, hay que aclara qué es un _scraper_. Para hacerlo entendible y f�
 
 ## Analizando el contenido
 
-Una vez aclarado esto, dentro de la web del ayuntamiento existe [esta sección]("http://torrelavega.es/index.php/ciudad/mas-noticias") donde se muestra un listado de las últimas 500 noticias. Mediante el uso de varias librerías se ha realizado un pequeño [script](https://es.wikipedia.org/wiki/Script) que recorre cada una de ellas y las formatea. El siguiente trozo de código permite vernos cómo:
+Una vez aclarado esto, dentro de la web del ayuntamiento existe <a href="http://torrelavega.es/index.php/ciudad/mas-noticias" target="_blank" rel="noopener noreferrer">esta sección</a> donde se muestra un listado de las últimas 500 noticias. Mediante el uso de varias librerías se ha realizado un pequeño [script](https://es.wikipedia.org/wiki/Script) que recorre cada una de ellas y las formatea. El siguiente trozo de código permite vernos cómo:
 
 ```javascript
 const html = response.data
