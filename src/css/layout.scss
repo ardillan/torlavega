@@ -15,9 +15,9 @@ header {
     display: flex;
     align-items: center;
     align-content: space-between;
+    margin: 0 -10px;
     a {
       text-decoration: none;
-      margin-right: 10px;
       text-transform: uppercase;
       font-size: 14px;
       color: $text-color-dark;
@@ -43,10 +43,12 @@ header {
 
   @media (max-width: $breakpoint-tablet) {
     nav {
+      a {
+        font-size: 12px;
+      }
       .last-item {
         text-decoration: none;
         text-transform: uppercase;
-        background: white;
         padding: 0 0px;
         background: transparent;
         border-radius: 3px;
@@ -54,6 +56,9 @@ header {
         margin: 0 0 0 auto;
         line-height: 14px;
         text-align: center;
+        position: absolute;
+        top: 15px;
+        left: 15px;
       }
     }
   }
