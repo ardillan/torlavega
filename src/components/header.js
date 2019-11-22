@@ -11,6 +11,9 @@ export default () => {
         <Link to="/blog" activeClassName="active">
           Blog
         </Link>
+        <Link to="/utilidades" activeClassName="active">
+          Utilidades
+        </Link>
         <Link to="/contacto" activeClassName="active">
           Contacto
         </Link>
