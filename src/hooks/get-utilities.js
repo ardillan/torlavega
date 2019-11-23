@@ -10,6 +10,7 @@ export const getUtilities = () => {
               utilidades {
                 name
                 path
+                description
                 background
               }
             }
