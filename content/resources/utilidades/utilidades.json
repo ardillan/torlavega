@@ -1,0 +1,9 @@
+{
+  "utilidades": [
+    {
+      "name": "Contenedores de aceite",
+      "path": "/utilidades/contenedores-de-aceite",
+      "background": "/imagenes/utilidades/contenedores-aceite.svg"
+    }
+  ]
+}
