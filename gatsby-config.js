@@ -56,6 +56,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/resources/utilidades`,
+        name: `utilidades`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/resources/contenedores-aceite/`,
+        name: `contenedores-aceite`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Torlavega: Proyecto colaborativo`,
@@ -67,6 +81,7 @@ module.exports = {
         icon: `src/images/general/torlavega-icon.png`,
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
