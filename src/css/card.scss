@@ -27,16 +27,11 @@
     line-height: 21px;
   }
 
-  header {
-    height: 90px;
-  }
-
   footer {
     text-align: initial;
     display: flex;
     margin: 0px;
     align-items: center;
-    height: 20px;
     .meta,
     time {
       font-family: $secondary-font;
