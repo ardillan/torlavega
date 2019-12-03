@@ -11,7 +11,10 @@ export const getOilRecipes = () => {
                 address
                 city
                 cp
-                geo
+                geo {
+                  lat
+                  lng
+                }
               }
             }
           }
