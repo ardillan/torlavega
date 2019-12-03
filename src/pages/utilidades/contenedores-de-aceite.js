@@ -1,24 +1,16 @@
 import React from "react"
 import Layout from "../../components/layout"
 import { getOilRecipes } from "../../hooks/get-content"
-// import { Map, Marker, Popup, TileLayer } from "react-leaflet"
 import Map from "../../components/map"
+import "leaflet/dist/leaflet.css"
 
 export default () => {
   const oilRecipes = getOilRecipes()
   const markers = []
   oilRecipes.map(value => {
-    console.log(value.geo[0].lat)
-    markers.push({
-      latLng: {
-        title: value.address,
-        lat: value.geo[0].lat,
-        lng: value.geo[0].lng,
-      },
-    })
+    markers.push([value.geo[0].lat, value.geo[0].lng])
   })
 
-  console.log(oilRecipes.length)
   return (
     <Layout>
       <section className="page-layout">
@@ -51,8 +43,9 @@ export default () => {
             </div>
           )
         })}
+      </div>
+      <div className="columns">
         <div className="column is-12">
-          {/* <Map center={position} zoom={13} style={{ height: 500 }}></Map> */}
           <Map markersData={markers} />
         </div>
       </div>
