@@ -1,14 +1,13 @@
 import React from "react"
 import Layout from "../../components/layout"
 import { getOilRecipes } from "../../hooks/get-content"
-import Map from "../../components/map"
-import "leaflet/dist/leaflet.css"
+import LeafletMap from "../../components/map"
 
 export default () => {
   const oilRecipes = getOilRecipes()
   const markers = []
   oilRecipes.map(value => {
-    markers.push([value.geo[0].lat, value.geo[0].lng])
+    return markers.push([value.geo[0].lat, value.geo[0].lng])
   })
 
   return (
@@ -46,7 +45,7 @@ export default () => {
       </div>
       <div className="columns">
         <div className="column is-12">
-          <Map markersData={markers} />
+          {typeof window !== "undefined" && <LeafletMap markers={markers} />}
         </div>
       </div>
     </Layout>

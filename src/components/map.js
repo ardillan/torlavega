@@ -1,38 +1,20 @@
-import React, { useEffect } from "react"
-import L from "leaflet"
-import "leaflet/dist/leaflet.css"
+import React from "react"
+import { Map, TileLayer, Marker } from "react-leaflet"
 
-delete L.Icon.Default.prototype._getIconUrl
+const LeafletMap = markers => {
+  const position = [43.350153, -4.045296]
 
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-})
-
-const Map = ({ markersData }) => {
-  useEffect(() => {
-    const mainMap = L.map("map", {
-      center: [43.350153, -4.045296],
-      zoom: 14,
-      layers: [
-        L.tileLayer(
-          "http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-
-          {
-            attribution:
-              '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          }
-        ),
-      ],
-    })
-
-    markersData.forEach(marker => {
-      L.marker(marker).addTo(mainMap)
-    })
-  }, [])
-
-  return <div id="map" style={{ width: "100%", height: "600px" }} />
+  return (
+    <Map center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
+      <TileLayer
+        url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contribudores'
+      />
+      {markers.markers.map((marker, index) => {
+        return <Marker position={[marker[0], marker[1]]} key={index} />
+      })}
+    </Map>
+  )
 }
 
-export default Map
+export default LeafletMap
