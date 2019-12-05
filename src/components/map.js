@@ -7,7 +7,7 @@ const LeafletMap = markers => {
   return (
     <Map center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
       <TileLayer
-        url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contribudores'
       />
       {markers.markers.map((marker, index) => {
