@@ -45,7 +45,7 @@ export default () => {
       </div>
       <div className="columns">
         <div className="column is-12">
-          {typeof window !== "undefined" && <LeafletMap markers={markers} />}
+          {typeof window !== "undefined" && <LeafletMap data={oilRecipes} />}
         </div>
       </div>
     </Layout>
