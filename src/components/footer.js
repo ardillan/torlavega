@@ -6,7 +6,8 @@ export default () => (
       <div className="column is-12">
         <strong>{new Date().getFullYear()}</strong>, Hecho con{" "}
         <a href="https://www.gatsbyjs.org/">GatsbyJS</a> desde diferentes
-        lugares de Torlavega
+        lugares de Torlavega. Alojado en{" "}
+        <a href="https://www.netlify.com">Netlify</a>
         <p>
           Para la gente de internet{`  `}
           <span
