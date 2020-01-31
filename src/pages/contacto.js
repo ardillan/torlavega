@@ -11,8 +11,8 @@ const Contacto = () => {
         <h1>Contacto</h1>
         <p>
           Puedes contactar usando el siguiente formulario de contacto o bien
-          mediante un mensaje a la cuenta de Twitter de
-          <a href="https://twitter.com/datos_torlavega"> Torlavega</a>
+          mediante un mensaje a la cuenta de Twitter de{" "}
+          <a href="https://twitter.com/datos_torlavega">Torlavega</a>
         </p>
         <form name="contact" method="POST" data-netlify="true">
           <p>

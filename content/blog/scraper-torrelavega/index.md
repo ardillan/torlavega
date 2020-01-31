@@ -13,7 +13,7 @@ Antes de nada, hay que aclarar qué es un _scraper_. Para hacerlo entendible y f
 
 ## Cómo se utiliza en esta web
 
-Una vez aclarado esto, dentro de la web del ayuntamiento existe <a href="http://torrelavega.es/index.php/ciudad/mas-noticias" target="_blank" rel="noopener noreferrer">esta sección</a> donde se muestra un listado de las últimas 500 noticias. Gracias a esta utilidad se ha realizado un pequeño [script](https://es.wikipedia.org/wiki/Script) que recorre cada elemento de la página, lo formatea y [forma una página con el resultado](/datos-del-ayuntamiento). El siguiente trozo de código permite vernos cómo:
+Una vez aclarado esto, dentro de la web del ayuntamiento existe <a href="http://torrelavega.es/index.php/ciudad/mas-noticias" target="_blank" rel="noopener noreferrer">esta sección</a> donde se muestra un listado de las últimas 500 noticias. Gracias a esta utilidad se ha realizado un pequeño [script](https://es.wikipedia.org/wiki/Script) que recorre cada elemento de la página, lo formatea y [forma una página con el resultado](/datos-del-ayuntamiento). El siguiente trozo de código nos permite ver cómo:
 
 ```javascript
 // Se declara de qué pagina se va a extraer la información

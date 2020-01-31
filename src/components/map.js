@@ -3,10 +3,6 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet"
 
 const LeafletMap = data => {
   const position = [43.350153, -4.045296]
-  console.log(data, "Información")
-  // data.data.map(value => {
-  //   console.log(value.geo[0].lat)
-  // })
 
   return (
     <Map center={position} zoom={13} style={{ height: "400px", width: "100%" }}>

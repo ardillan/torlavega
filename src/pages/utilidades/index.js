@@ -2,11 +2,13 @@ import React from "react"
 import { getUtilities } from "../../hooks/get-utilities"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 export default () => {
   const utilities = getUtilities()
   return (
     <Layout>
+      <SEO title="Utilidades" />
       <section>
         <div className="columns is-multiline">
           <div className="column is-12">
