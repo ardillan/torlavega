@@ -12,7 +12,7 @@ Si lo que deseas es contribuir en al propio código, puedes clonar el proyecto, 
 
 Para ello, puedes ejecutar el proyecto en tu máquina local. Tienes que seguir los siguientes pasos:
 
-1. Instala **Gatsby JS** mediante la su [guía oficial](https://www.gatsbyjs.org/docs/quick-start/)
+1. Instala **Gatsby JS**, es sencillo gracias a su [guía oficial](https://www.gatsbyjs.org/docs/quick-start/)
 
 2. Una vez instalado, clona el proyecto y ejecuta el siguiente comando para instalar las dependencias:
 

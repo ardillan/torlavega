@@ -20,7 +20,6 @@ export default () => (
           >
             ♥️
           </span>
-          ️
         </p>
       </div>
     </div>

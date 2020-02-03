@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import { getOilRecipes } from "../../hooks/get-content"
 import LeafletMap from "../../components/map"
 
@@ -12,6 +13,7 @@ export default () => {
 
   return (
     <Layout>
+      <SEO title="Localización de los contenedores de aceite en Torrelavega" />
       <section className="page-layout">
         <h1>Contenedores de aceite</h1>
         <p>
