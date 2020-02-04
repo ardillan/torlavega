@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { getPosts } from "../hooks/get-posts"
+import { useGetPosts } from "../hooks/get-posts"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { formatDate } from "../utils/helpers"
 
 export default props => {
-  const posts = getPosts()
+  const posts = useGetPosts()
 
   return (
     <Layout location={props.location} title="Inicio">

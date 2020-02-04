@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const getOilRecipes = () => {
+export const useGetOilRecipes = () => {
   const oilRecipes = useStaticQuery(
     graphql`
       query {

@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const getUtilities = () => {
+export const useGetUtilities = () => {
   const pages = useStaticQuery(
     graphql`
       query {

@@ -1,11 +1,11 @@
 import React from "react"
-import { getUtilities } from "../../hooks/get-utilities"
+import { useGetUtilities } from "../../hooks/get-utilities"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
 export default () => {
-  const utilities = getUtilities()
+  const utilities = useGetUtilities()
   return (
     <Layout>
       <SEO title="Utilidades" />

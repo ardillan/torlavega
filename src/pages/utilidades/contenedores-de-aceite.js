@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import { getOilRecipes } from "../../hooks/get-content"
+import { useGetOilRecipes } from "../../hooks/get-content"
 import LeafletMap from "../../components/map"
 
 export default () => {
-  const oilRecipes = getOilRecipes()
+  const oilRecipes = useGetOilRecipes()
   const markers = []
   oilRecipes.map(value => {
     return markers.push([value.geo[0].lat, value.geo[0].lng])
