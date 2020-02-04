@@ -14,7 +14,12 @@ const Contacto = () => {
           mediante un mensaje a la cuenta de Twitter de{" "}
           <a href="https://twitter.com/datos_torlavega">Torlavega</a>
         </p>
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          action="/formulario-recibido"
+        >
           <p>
             <label>
               Tu nombre
@@ -26,7 +31,7 @@ const Contacto = () => {
             <textarea placeholder="Me gustaría colaborar en el proyecto" />
           </p>
           <button type="submit">Enviar</button>
-          <input type="hidden" name="contact" value="Formulario de contacto" />
+          <input type="hidden" name="form-name" value="contact" />
         </form>
       </section>
     </Layout>
