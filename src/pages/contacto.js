@@ -28,7 +28,10 @@ const Contacto = () => {
           </p>
           <p>
             <label>Mensaje</label>
-            <textarea placeholder="Me gustaría colaborar en el proyecto" />
+            <textarea
+              placeholder="Me gustaría colaborar en el proyecto"
+              name="comment"
+            />
           </p>
           <button type="submit">Enviar</button>
           <input type="hidden" name="form-name" value="contact" />
