@@ -1,0 +1,16 @@
+.badget {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  padding: 0px 20px;
+  top: -20px;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: normal;
+  position: absolute;
+  right: 20px;
+  line-height: 15px;
+  background: white;
+  &.is-green {
+    border: 1px solid $green-light;
+  }
+}

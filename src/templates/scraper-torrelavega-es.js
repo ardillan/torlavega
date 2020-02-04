@@ -239,6 +239,12 @@ export default ({ pageContext: { data } }) => {
                             : ""
                         }
                       >
+                        {hasPublishedToday(value.date) ? (
+                          <p className="badget is-green">Publicado hoy</p>
+                        ) : (
+                          ""
+                        )}
+
                         <a
                           href={`http://www.torrelavega.es${value.link}`}
                           target="_blank"
