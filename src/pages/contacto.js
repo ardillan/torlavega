@@ -23,7 +23,12 @@ const Contacto = () => {
           <p>
             <label>
               Tu nombre
-              <input type="text" placeholder="José Luis Hidalgo" name="name" />
+              <input
+                type="text"
+                placeholder="José Luis Hidalgo"
+                name="name"
+                required
+              />
             </label>
           </p>
           <p>
@@ -31,6 +36,7 @@ const Contacto = () => {
             <textarea
               placeholder="Me gustaría colaborar en el proyecto"
               name="comment"
+              required
             />
           </p>
           <button type="submit">Enviar</button>
