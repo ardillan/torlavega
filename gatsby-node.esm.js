@@ -1,4 +1,5 @@
 import { getData } from "./src/utils/scraper-torrelavega-es"
+import { tweetData } from "./src/utils/twitter-bot"
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -68,6 +69,9 @@ exports.createPages = async ({ graphql, actions }) => {
     component: scraperTemplate,
     context: { data: { scraperData } },
   })
+
+  // Añade los datos en Twitter
+  tweetData({ scraperData })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
