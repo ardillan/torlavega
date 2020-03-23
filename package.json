@@ -11,8 +11,10 @@
     "axios": "^0.19.0",
     "bulma": "^0.7.5",
     "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "gatsby": "^2.13.73",
+    "gatsby-cli": "^2.11.1",
     "gatsby-image": "^2.2.10",
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-offline": "^2.2.7",
@@ -37,7 +39,8 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-leaflet": "^2.6.0",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
