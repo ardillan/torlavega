@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Añade los datos en Twitter
-  tweetData({ scraperData })
+  // tweetData({ scraperData })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
