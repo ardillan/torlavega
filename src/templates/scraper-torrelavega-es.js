@@ -207,13 +207,12 @@ export default ({ pageContext: { data } }) => {
                 </ResponsiveContainer>
               </div>
               <h2>Listado de noticias</h2>
-              <small>Se muestra un total de 500 noticias</small>
-              <br />
-              <small>
-                Última actualización {formatDate(lastBuild, "DD/MM/YYYY:HH/MM")}{" "}
+              <p>Se muestra un total de 500 noticias</p>
+              <p>
+                Última actualización <strong>{formatDate(lastBuild, "DD/MM/YYYY:HH/MM")}{" "}</strong>
                 | Hoy se han publicado {todayPublishedNews(allScraperData)}{" "}
                 noticias
-              </small>
+              </p>
               <hr className="transparent-separator" />
               <ul>
                 {scraperData.map((value, index) => {
@@ -228,8 +227,8 @@ export default ({ pageContext: { data } }) => {
                               noticias
                             </>
                           ) : (
-                            ""
-                          )}
+                              ""
+                            )}
                         </h3>
                       </div>
                       <li
@@ -242,8 +241,8 @@ export default ({ pageContext: { data } }) => {
                         {hasPublishedToday(value.date) ? (
                           <p className="badget is-green">Publicado hoy</p>
                         ) : (
-                          ""
-                        )}
+                            ""
+                          )}
 
                         <a
                           href={`http://www.torrelavega.es${value.link}`}
@@ -267,10 +266,10 @@ export default ({ pageContext: { data } }) => {
                       <Loader />
                     </div>
                   ) : (
-                    <div>
-                      <p>No hay más noticias publicadas</p>
-                    </div>
-                  )}
+                      <div>
+                        <p>No hay más noticias publicadas</p>
+                      </div>
+                    )}
                 </li>
               </ul>
             </div>
