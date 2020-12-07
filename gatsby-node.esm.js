@@ -1,10 +1,31 @@
 import { getData } from "./src/utils/scraper-torrelavega-es"
+import { createData } from "./src/utils/scraper-torrelavega-es-2020"
 import { tweetData } from "./src/utils/twitter-bot"
+import { slugify } from "./src/utils/helpers"
+import datosDelAyuntamientoDataOriginal from "./content/resources/scraper-data/ayuntamiento.json"
+
+const fs = require("fs")
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  // Actualizamos el JSON de ayuntamiento.json
+  // 1. - Leemos la información del JSON que hay y añadimos los datos que faltan
+  // 2. - Creamos la página de enlaces y las páginas individuales de cada enlace
+  // 3. - Se publica en Twitter los datos que no se han publicado
+
+  const dataCreated = await createData().then(res => res)
+
+  // Write data in 'Output.txt' .
+  fs.writeFile(
+    "./content/resources/scraper-data/ayuntamiento-noticias-2020.json",
+    JSON.stringify({ data: dataCreated }),
+    err => {
+      // In case of a error throw err.
+      if (err) throw err
+    }
+  )
 
   const scraper = await getData().then(response => {
     return response
@@ -15,10 +36,73 @@ exports.createPages = async ({ graphql, actions }) => {
     time: new Date().getTime(),
   }
 
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const scraperTemplate = path.resolve(
-    `./src/templates/scraper-torrelavega-es.js`
+  const datosDelAyuntamientoDataUpdated = []
+
+  scraperData.data.map(post => {
+    datosDelAyuntamientoDataUpdated.push({
+      id: post.link
+        .replace("/index.php/ciudad/mas-noticias/item/", "")
+        .slice(0, 4), // Añade el ID único al objeto
+      link: slugify(post.link)
+        .replace("/index.php/ciudad/mas-noticias/item/", "")
+        .substring(5), // Crea un slug único
+      originalLink: `http://www.torrelavega.es${post.link}`,
+      publishedDate: post.date,
+      title: post.title,
+      publishedOnTwitter: false,
+    })
+  })
+
+  const datosNuevos = { ...datosDelAyuntamientoDataOriginal }
+
+  function pushToArray(arr, obj) {
+    const index = arr.findIndex(e => e.id === obj.id)
+    if (index === -1) {
+      arr.push(obj)
+    }
+  }
+
+  datosDelAyuntamientoDataUpdated.map(obj => {
+    pushToArray(datosNuevos.data, obj)
+  })
+
+  // Write data in 'Output.txt' .
+  fs.writeFile(
+    "./content/resources/scraper-data/ayuntamiento.json",
+    JSON.stringify(datosNuevos),
+    err => {
+      // In case of a error throw err.
+      if (err) throw err
+    }
   )
+
+  // Crea página de enlaces de torrelavega.es
+  createPage({
+    path: `/datos-del-ayuntamiento`,
+    component: path.resolve(
+      "./src/templates/scraper-torrelavega-single-page.js"
+    ),
+    context: { data: { scraperData } },
+  })
+
+  // ToDo - Crea páginas individuales  de torrelavega.es
+  // scraperData.data.forEach(post => {
+  //   createPage({
+  //     path: `/datos-del-ayuntamiento/${slugify(post.link)
+  //       .replace("/index.php/ciudad/mas-noticias/item/", "")
+  //       .substring(5)}`,
+  //     component: path.resolve(
+  //       "./src/templates/scraper-torrelavega-single-page.js"
+  //     ),
+  //     context: post,
+  //   })
+  // })
+
+  // 🔥 Añade los datos en Twitter
+  // tweetData({ scraperData })
+
+  // 🔥  Crea las páginas del blog
+
   const result = await graphql(
     `
       {
@@ -54,7 +138,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: post.node.fields.slug,
-      component: blogPostTemplate,
+      component: path.resolve("./src/templates/blog-post.js"),
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -62,16 +146,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  // Crea página de enlaces
-  createPage({
-    path: `/datos-del-ayuntamiento`,
-    component: scraperTemplate,
-    context: { data: { scraperData } },
-  })
-
-  // Añade los datos en Twitter
-  tweetData({ scraperData })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
