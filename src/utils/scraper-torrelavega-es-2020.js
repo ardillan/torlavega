@@ -1,8 +1,10 @@
 import cheerio from "cheerio"
 import { slugify } from "./helpers"
 import AbortController from "abort-controller"
+import ayuntamientoNoticias2020 from "../../content/resources/scraper-data/ayuntamiento-noticias-2020.json"
 
 const fetch = require("node-fetch")
+const fs = require("fs")
 
 const controller = new AbortController()
 const timeout = setTimeout(() => {
@@ -50,11 +52,22 @@ const formatDate = date => {
   return dateObject.toISOString().replace("00:00", "12:00")
 }
 
+const pushToArray = (arr, obj) => {
+  // console.log("👉 arr", arr)
+  // console.log("👉 obj", obj)
+
+  const index = arr.findIndex(e => e.id === obj.id)
+  if (index === -1) {
+    arr.push(obj)
+  }
+}
+
 export const createData = async () => {
   // La primera noticia del año 2020 es la 6814
   const newsData = []
+  // console.log("👉 👉 👉 ayuntamientoNoticias2020", ayuntamientoNoticias2020)
   try {
-    for (let id = 6835; id <= 6840; id++) {
+    for (let id = 6814; id <= 6816; id++) {
       const response = await downloadPage(
         `http://torrelavega.es/index.php/ciudad/mas-noticias/item/${id}`
       )
@@ -68,22 +81,36 @@ export const createData = async () => {
       const hits = $(".itemHits")
         .find("b")
         .text()
-      console.log(`✔️`, slugify(title))
+      // console.log(`✔️`, slugify(title))
 
-      newsData.push({
+      const newsData = {
         id,
         slug: slugify(title),
         originalLink: `http://torrelavega.es/index.php/ciudad/mas-noticias/item/${id}`,
         publishedDate:
           date === "" ? formatDate("\n01-01-1970\n") : formatDate(date),
         title: title.replace(/\s+/g, " ").trim(),
-        content: formatContent(content),
+        content: content,
         hits,
         publishedOnTwitter: true,
-      })
-    }
+      }
 
-    return newsData
+      const datosNuevos = { ...ayuntamientoNoticias2020 }
+
+      pushToArray(datosNuevos.data, newsData)
+
+      console.log("👉 datosNuevos.data", datosNuevos.data)
+
+      // Escribe los datos de nuevo
+      fs.writeFile(
+        "./content/resources/scraper-data/ayuntamiento-noticias-2020.json",
+        JSON.stringify({ data: datosNuevos.data }),
+        err => {
+          // In case of a error throw err.
+          if (err) throw err
+        }
+      )
+    }
 
     // try downloading an invalid url
   } catch (error) {
