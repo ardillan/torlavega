@@ -67,7 +67,7 @@ export const createData = async () => {
   const newsData = []
   // console.log("👉 👉 👉 ayuntamientoNoticias2020", ayuntamientoNoticias2020)
   try {
-    for (let id = 6814; id <= 6816; id++) {
+    for (let id = 6814; id <= 7604; id++) {
       const response = await downloadPage(
         `http://torrelavega.es/index.php/ciudad/mas-noticias/item/${id}`
       )
@@ -81,7 +81,10 @@ export const createData = async () => {
       const hits = $(".itemHits")
         .find("b")
         .text()
-      // console.log(`✔️`, slugify(title))
+
+      const categories = $(".itemCategory a").text()
+
+      console.log(`✔️`, slugify(title))
 
       const newsData = {
         id,
@@ -92,14 +95,13 @@ export const createData = async () => {
         title: title.replace(/\s+/g, " ").trim(),
         content: content,
         hits,
+        categories,
         publishedOnTwitter: true,
       }
 
       const datosNuevos = { ...ayuntamientoNoticias2020 }
 
       pushToArray(datosNuevos.data, newsData)
-
-      console.log("👉 datosNuevos.data", datosNuevos.data)
 
       // Escribe los datos de nuevo
       fs.writeFile(
