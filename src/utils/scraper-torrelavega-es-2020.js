@@ -65,9 +65,8 @@ const pushToArray = (arr, obj) => {
 export const createData = async () => {
   // La primera noticia del año 2020 es la 6814
   const newsData = []
-  // console.log("👉 👉 👉 ayuntamientoNoticias2020", ayuntamientoNoticias2020)
   try {
-    for (let id = 6814; id <= 7604; id++) {
+    for (let id = 7604; id <= 7604; id++) {
       const response = await downloadPage(
         `http://torrelavega.es/index.php/ciudad/mas-noticias/item/${id}`
       )

@@ -76,6 +76,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/resources/scraper-data/`,
+        name: `datos-ayuntamiento`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Torlavega: Proyecto colaborativo`,
