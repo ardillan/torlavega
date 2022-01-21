@@ -6,7 +6,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const scraper = await getData().then(response => {
+  const scraper = await getData().then((response) => {
     return response
   })
 
@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Añade los datos en Twitter
-  tweetData({ scraperData })
+  // tweetData({ scraperData })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

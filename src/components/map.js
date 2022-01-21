@@ -1,11 +1,15 @@
 import React from "react"
-import { Map, TileLayer, Marker, Popup } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 
-const LeafletMap = data => {
+const LeafletMap = (data) => {
   const position = [43.350153, -4.045296]
 
   return (
-    <Map center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
+    <MapContainer
+      center={position}
+      zoom={13}
+      style={{ height: "400px", width: "100%" }}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contribudores'
@@ -17,7 +21,7 @@ const LeafletMap = data => {
           </Marker>
         )
       })}
-    </Map>
+    </MapContainer>
   )
 }
 
