@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default () => {
+const Header = () => {
   return (
     <header>
       <nav>
@@ -22,3 +22,5 @@ export default () => {
     </header>
   )
 }
+
+export default Header
