@@ -1,37 +1,55 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9f99c43c-ce89-4cad-84c1-2d3d2b493e43/deploy-status)](https://app.netlify.com/sites/torlavega/deploys) ![https://img.shields.io/badge/React-Gatsby%20JS-663399](https://img.shields.io/badge/React-Gatsby%20JS-663399)
+# Astro Starter Kit: Basics
 
-# Torlavega
-
-La web de **torlavega.com** es un lugar que trata de recopilar el máximo número de datos disponibles para los ciudadanos de Torrelavega, nutriéndose de diferentes plataformas y transformándolos en información útil.
-
-Es un proyecto que está abierto a la colaboración. Puedes ayudar a que la web crezca y mejore aportando ideas, para ello puedes [proponer mejoras](https://github.com/ardillan/torlavega/issues) dentro del respositorio del proyecto.
-
-## Ejecutar el proyecto en entorno local
-
-Si lo que deseas es contribuir en al propio código, puedes clonar el proyecto, mejorarlo y proponer una _pull-request_.
-
-Para ello, puedes ejecutar el proyecto en tu máquina local. Tienes que seguir los siguientes pasos:
-
-1. Instala **Gatsby JS**, es sencillo gracias a su [guía oficial](https://www.gatsbyjs.org/docs/quick-start/)
-
-2. Una vez instalado, clona el proyecto y ejecuta el siguiente comando para instalar las dependencias:
-
-```bash
-npm install
+```
+npm create astro@latest -- --template basics
 ```
 
-3. Por último, ejecuta Gatsby JS con el siguiente comando
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-```bash
-gatsby develop
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-### Dependencias
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-El repositorio tiene varias dependencias que hacen más fácil su desarrollo. Alguna de ellas son:
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-- [Leaflet JS](http://leafletjs.com/) para implementar mapas.
-- [Bulma](http://bulma.io) como librería CSS.
-- [Sass](https://sass-lang.com) para preprocesar CSS.
+Any static assets, like images, can be placed in the `public/` directory.
 
-Puedes ver todas las dependencias dentro del [archivo de configuración](https://github.com/ardillan/torlavega/blob/master/package.json).
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

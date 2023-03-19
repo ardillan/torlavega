@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="El proyecto">
+  <main>
+    <h1>El proyecto</h1>
+    <h2>
+      Torlavega.com es un proyecto colaborativo con el que se quiere recolectar
+      la máxima cantidad de datos para ponerlos a disposición de todo el mundo.
+    </h2>
+    <hr />
+    <p>
+      Hoy en día el proceso de digitalización del que estamos siendo testigos es
+      imparable: la lista de la compra, la cita del médico, el callejero de tu
+      ciudad... la inmensa mayoría se encuentra disponible desde nuestro
+      teléfono móvil.
+    </p>
+    <p>
+      Es un proceso que tiene ventajas e incovenientes. Este breve artículo
+      titulado <a
+        href="https://blog.virgulilla.com/2018/alfabetización-digital/"
+      >
+        "Alfabetización digital"</a
+      > amplía esta idea sobre cómo hay que reflexionar en esta adopción de digitalización.
+    </p>
+    <p>
+      Este proyecto quiere poner en alza uno los valores que tiene la
+      digitalización: la reutilización de datos y su puesta al servicio los
+      ciudadanos. En este caso de nuestra ciudad,Torrelavega. Por ello, el
+      código de esta web es abierto y está disponible para toda aquella persona
+      que quiera participar.
+    </p>
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1.5rem;
+      max-width: 60ch;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+
+    .instructions code {
+      font-size: 0.875em;
+      font-weight: bold;
+      background: rgba(var(--accent), 12%);
+      color: rgb(var(--accent));
+      border-radius: 4px;
+      padding: 0.3em 0.45em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent));
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 1rem;
+      padding: 0;
+    }
+  </style>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const allPosts = await getCollection("blog");
+---
+
+<Layout title="Blog">
+  <main>
+    <h1><span class="text-gradient">Blog</span></h1>
+
+    <ul role="list" class="link-card-grid">
+      {
+        allPosts.map((post) => (
+          <Card
+            href={`blog/${post.slug}`}
+            title={post.data.title}
+            body={post.data.description}
+          />
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

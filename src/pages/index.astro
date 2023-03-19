@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+---
+
+<Layout title="Torlavega.com | Open Source Data">
+  <main>
+    <h1>Bienvenido a <span class="text-gradient">Torlavega</span></h1>
+    <p class="instructions">
+      <code>Torlavega.com</code>
+      es un <strong> proyecto colaborativo</strong> con el que se quiere recolectar
+      la máxima cantidad de datos para ponerlos a disposición de todo el mundo.
+    </p>
+    <ul role="list" class="link-card-grid">
+      {
+        allPosts.map((post) => (
+          <Card
+            href={`blog/${post.slug}`}
+            title={post.data.title}
+            body={post.data.description}
+          />
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
