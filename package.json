@@ -1,16 +1,28 @@
 {
-  "name": "",
+  "name": "@ardillan/torlavega",
+  "description": "Proyecto colaborativo para recopilar datos sobre Torrelavega y ponerlos a disposición de todo el mundo.",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "homepage": "https://torlavega.com/",
+  "bugs": {
+    "url": "https://github.com/ardillan/torlavega/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ardillan/torlavega.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prettier": "prettier --write ./src"
   },
   "dependencies": {
     "@astrojs/netlify": "^2.2.0",
-    "astro": "^2.1.3"
+    "astro": "^2.1.3",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }

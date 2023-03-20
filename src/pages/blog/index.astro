@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Card.astro";
+import Layout from "layout:Layout";
+import Card from "component:Card";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -12,7 +12,6 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry } = Astro.props;
 const allPosts = await getCollection("blog");
 ---
 
